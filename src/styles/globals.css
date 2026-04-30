@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* 1. DEFINIÇÃO DA IDENTIDADE VISUAL NO TEMA DO TAILWIND */
+@theme {
+  --color-metal-dark: #050505;
+  --color-metal-section: #111111;
+  --color-blue-primary: #0055cc;
+  --color-blue-glow: #0088ff;
+  --color-silver-text: #cccccc;
+  --color-industrial-gray: #1a1a1a; /* Cinza escuro profundo */
+  --color-clean-white: #f8f9fa;     /* Branco com leve toque acinzentado */
+  --color-metal-text: #2d2d2d;     /* Texto escuro para fundo branco */
+  /* Adicionando sombras e gradientes personalizados da sua identidade */
+  --shadow-blue-glow: 0 0 15px rgba(0, 85, 204, 0.3);
+  --shadow-silver-hover: 0 0 10px rgba(204, 204, 204, 0.4);
+}
+/* 2. REGRAS GLOBAIS (EQUIVALENTE AO SEU * E BODY) */
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+    font-family: 'Arial', sans-serif;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-metal-dark text-silver-text antialiased leading-relaxed;
+  }
+  /* Títulos com o seu traço (pseudo-elemento ::after) */
+  h2 {
+    @apply text-white text-4xl md:text-[2.5em] font-bold mb-10 uppercase tracking-wider text-center relative;
+  }
+  h2::after {
+    content: '';
+    @apply block w-20 h-[3px] bg-blue-glow mx-auto mt-2;
+    box-shadow: 0 0 10px #0088ff;
+  }
+  /* Estilização da sua barra de rolagem industrial */
+  ::-webkit-scrollbar {
+    @apply w-[10px];
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-metal-section;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-primary rounded-[5px];
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-glow;
+  }
+  /* Efeito de seleção */
+  ::selection {
+    @apply bg-blue-primary text-white;
+  }
+}
+/* 3. CLASSES DE UTILIDADE PARA ELEMENTOS REPETITIVOS (BOTÕES E CARDS) */
+@layer components {
+  .btn-serralheiro {
+    @apply inline-block px-8 py-[15px] bg-blue-primary text-white font-bold rounded-[5px] uppercase 
+           transition-all duration-300 border border-blue-glow hover:bg-blue-glow;
+    box-shadow: 0 0 20px transparent;
+  }
+  .btn-serralheiro:hover {
+    box-shadow: 0 0 20px #0088ff;
+  }
+  .card-metal {
+    @apply bg-metal-dark border border-[#333] p-[30px] w-full md:w-[300px] rounded-lg 
+           transition-all duration-300 hover:-translate-y-2 hover:border-blue-primary;
+  }
+  .card-metal:hover {
+    box-shadow: 0 10px 20px rgba(0, 85, 204, 0.2);
+  }
+}
+/* Ajuste de margem para o cabeçalho fixo */
+section {
+  scroll-margin-top: 100px;
+}
+@layer components {
+  .btn-solicitar {
+    @apply inline-block px-[30px] py-[15px] rounded-[5px] font-bold uppercase transition-all duration-300 no-underline;
+    @apply bg-blue-primary text-white border border-blue-glow;
+  }
+
+  .btn-solicitar:hover {
+    @apply bg-blue-glow;
+    box-shadow: 0 0 20px #0088ff; /* O brilho azul metálico */
+  }
+}
+.hover\:text-blue-glow:hover {
+  color: var(--color-blue-glow) !important;
+  filter: drop-shadow(0 0 8px var(--color-blue-glow));
+}
+/* Animação suave para o botão de WhatsApp aparecer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fixed {
+  animation: fadeIn 0.4s ease-out;
+}
+.section-divider {
+  @apply border-t border-zinc-800/50 shadow-[0_-1px_0_rgba(0,85,204,0.1)];
+}
