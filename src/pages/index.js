@@ -142,22 +142,13 @@ export default function Home() {
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <Link href="/" className="relative flex items-center gap-4 group">
                         <div className="relative w-12 h-12 md:w-16 md:h-16 transition-transform group-hover:scale-110">
-                            <Image
-                                src="/logo2-serralheriaesoldagens.png"
-                                alt="Logo"
-                                fill
-                                sizes="128px" // Tamanho aproximado que ele ocupa na tela
-                                className="object-contain"
+                            <Image src="/logo2-serralheriaesoldagens.png"alt="Logo" 
+                                fill sizes="128px" className="object-contain"
                             />
                         </div>
                         <div className="hidden lg:block relative w-64 h-12">
-                            <Image
-                                src="/logo3-serralheriaesoldagens.png"
-                                alt="Serralheria e Soldagens"
-                                fill
-                                priority // Adicione isso também
-                                sizes="(max-width: 1024px) 200px, 300px"
-                                className="object-contain"
+                            <Image src="/logo3-serralheriaesoldagens.png" alt="Serralheria e Soldagens"
+                                fill priority sizes="(max-width: 1024px) 200px, 300px" className="object-contain"
                             />
                         </div>
                     </Link>
@@ -165,22 +156,15 @@ export default function Home() {
                     {/* Menu Desktop */}
                     <nav className="hidden lg:flex items-center gap-8">
                         {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                            <Link
-                                key={item}
-                                href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                            <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                 className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
-                            >
-                                {item}
+                            > {item}
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
                         {/* Link de Orçamento */}
-                        <a
-                            href="https://wa.me/5561993294211"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all"
-                        >
+                        <a href="https://wa.me/5561993294211" target="_blank" rel="noopener noreferrer"
+                            className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
                             Orçamento
                         </a>
                     </nav>
@@ -196,12 +180,9 @@ export default function Home() {
                     <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 border-b border-blue-500/30 py-8 px-6 animate-in fade-in slide-in-from-top-4">
                         <nav className="flex flex-col gap-6 text-center">
                         {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                            <Link
-                                key={item}
-                                href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                            <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                 className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
-                            >
-                                {item}
+                            > {item}
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
@@ -264,11 +245,8 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {categoriasServicos.map((servico) => (
-                            <Link
-                                href={`/portifolio?categoria=${servico.id}`}
-                                key={servico.id}
-                                className="group flex gap-6 p-8 bg-metal-dark border-r-4 border-transparent hover:border-blue-primary transition-all duration-500 hover:bg-black shadow-xl"
-                            >
+                            <Link href={`/portifolio?categoria=${servico.id}`} key={servico.id}
+                                className="group flex gap-6 p-8 bg-metal-dark border-r-4 border-transparent hover:border-blue-primary transition-all duration-500 hover:bg-black shadow-xl">
                                 <div className="flex-shrink-0 w-14 h-14 bg-industrial-gray border border-zinc-700 rounded-md flex items-center justify-center group-hover:shadow-blue-glow transition-all">
                                     <i className={`bi ${servico.icon} text-blue-glow text-2xl`}></i>
                                 </div>
@@ -310,7 +288,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
 
             {/* FALE CONOSCO */}
             <section id="contato" className="py-24 px-8 bg-industrial-gray border-t border-zinc-800/50">
@@ -364,11 +341,8 @@ export default function Home() {
                                     Atendimento especializado para estruturas metálicas e soldagens de alta precisão.
                                 </p>
                             </div>
-                            <Link
-                                href="https://wa.me/5561993294211"
-                                target="_blank"
-                                className="btn-solicitar w-full text-center py-4 text-lg hover:scale-105 transition-transform"
-                            >
+                            <Link href="https://wa.me/5561993294211" target="_blank"
+                                className="btn-solicitar w-full text-center py-4 text-lg hover:scale-105 transition-transform">
                                 <i className="bi bi-chat-dots-fill mr-2"></i>
                                 SOLICITAR ORÇAMENTO AGORA
                             </Link>
@@ -383,7 +357,6 @@ export default function Home() {
                     <h2 className="text-white text-center mb-16 text-3xl md:text-5xl font-bold uppercase tracking-tighter italic">
                         Dúvidas Frequentes
                     </h2>
-
                     <div className="max-w-3xl mx-auto space-y-4">
                         {[
                             {
@@ -407,23 +380,19 @@ export default function Home() {
                                 a: "O prazo varia conforme a complexidade. Após a aprovação, definimos um cronograma claro para garantir entrega e instalação com precisão técnica."
                             }
                         ].map((faq, index) => (
-                            <details
-                                key={index}
-                                className="group border border-zinc-800 bg-[#121212] rounded-xl transition-all duration-300 open:border-blue-primary shadow-lg overflow-hidden"
-                            >
+                            <details key={index}
+                                className="group border border-zinc-800 bg-[#121212] rounded-xl transition-all duration-300 open:border-blue-primary shadow-lg overflow-hidden">
                                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none bg-white transition-colors group-hover:bg-gray-100">
                                     {/* Pergunta: Fundo Branco e Texto Preto para leitura imediata */}
                                     <span className="text-black font-bold text-base md:text-xl pr-4 leading-tight">
                                         {faq.q}
                                     </span>
-
                                     {/* Ícone adaptado para o fundo branco */}
                                     <div className="flex-shrink-0 text-blue-primary border-2 border-blue-primary w-10 h-10 rounded-full flex items-center justify-center group-open:bg-blue-primary group-open:text-white transition-all duration-300">
                                         <i className="bi bi-plus-lg group-open:hidden"></i>
                                         <i className="bi bi-dash-lg hidden group-open:block"></i>
                                     </div>
                                 </summary>
-
                                 {/* Resposta: Mantendo o estilo industrial escuro original */}
                                 <div className="px-6 pb-6 pt-2">
                                     <div className="border-t border-zinc-800 pt-5 text-gray-300 text-sm md:text-lg leading-relaxed antialiased">
@@ -441,7 +410,6 @@ export default function Home() {
                 <div className="container mx-auto px-6">
                     {/* Grid principal: 2 colunas no mobile, 3 no desktop */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-10 items-start">
-
                         {/* COLUNA 1 / LINHA 1 (Mobile): LOGO E DESCRIÇÃO */}
                         {/* col-span-2 faz com que esta div ocupe a largura total no mobile */}
                         <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
@@ -454,7 +422,6 @@ export default function Home() {
                                 Qualidade e durabilidade para o seu projeto em Cidade Ocidental - GO e entorno.
                             </p>
                         </div>
-
                         {/* COLUNA 1 / LINHA 2 (Mobile): MAPA DO SITE */}
                         <div className="col-span-1 flex flex-col items-center md:items-center">
                             <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-5 border-b border-blue-primary pb-2">
@@ -462,9 +429,7 @@ export default function Home() {
                             </h3>
                             <div className="flex flex-col gap-3 text-left">
                                 {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                                    <Link
-                                        key={item}
-                                        href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                                    <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                         className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group">
                                         <i className="bi bi-chevron-double-right text-blue-primary group-hover:translate-x-1 transition-transform"></i>
                                         {item}
@@ -472,13 +437,11 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-
                         {/* COLUNA 2 / LINHA 2 (Mobile): FALE CONOSCO */}
                         <div className="col-span-1 flex flex-col items-center md:items-end">
                             <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-5 border-b border-blue-primary pb-2">
                                 Fale Conosco
                             </h3>
-
                             <div className="flex flex-col gap-4 w-full">
                                 {/* Horário */}
                                 <div className="flex flex-col items-center md:items-end gap-1">
@@ -491,19 +454,16 @@ export default function Home() {
                                         <p className="m-0 italic">Sáb - Dom - Feriado | Fechado</p>
                                     </div>
                                 </div>
-
                                 {/* Links de Contato */}
                                 <div className="flex flex-col gap-3 items-center md:items-end">
                                     <a href="tel:061993294211" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
                                         <span className="font-bold tracking-tighter">(61) 9 9329-4211</span>
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
-
                                     <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
                                         <span className="font-bold tracking-tighter">Rua Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Mansões Recreio Mossoró. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
-
                                     <a href="https://www.instagram.com/serralheriaesoldagens" target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
                                         <span className="font-bold tracking-tighter">@serralheriaesoldagens</span>
                                         <i className="bi bi-instagram text-blue-primary text-base"></i>
@@ -512,7 +472,6 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-
                     {/* LINHA 3 e 4 (Mobile): CRÉDITOS */}
                     <div className="mt-12 pt-6 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-90">
                         {/* Terceira linha no celular */}

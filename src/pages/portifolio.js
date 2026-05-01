@@ -183,7 +183,7 @@ export default function Portifolio() {
             {/* CONTEÚDO PRINCIPAL (Ajustado com padding-top para não ficar sob o header fixo) */}
             <main className="flex-grow pt-32 pb-20">
                 <div className="text-center mb-10">
-                    <h1 className="text-5xl font-bold italic uppercase tracking-tighter text-white drop-shadow-sm">Portfólio</h1>
+                    <h1 className="text-5xl font-bold italic uppercase tracking-tighter text-white drop-shadow-sm">Portifólio</h1>
                     <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 mb-6"></div>
 
                     {isAdmin && (
@@ -224,7 +224,7 @@ export default function Portifolio() {
             {showModal && (
                 <div className="fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4">
                     <div className="bg-industrial-gray border-2 border-blue-primary p-8 rounded-xl w-full max-w-md shadow-2xl">
-                        <h2 className="text-2xl font-bold mb-6 italic uppercase tracking-tighter">Adicionar ao Portfólio</h2>
+                        <h2 className="text-2xl font-bold mb-6 italic uppercase tracking-tighter">Adicionar ao Portifólio</h2>
                         <form onSubmit={handleAddFoto} className="space-y-4">
                             <div>
                                 <label className="block text-xs font-bold uppercase text-zinc-400 mb-1">URL da Foto (ou nome do arquivo)</label>
