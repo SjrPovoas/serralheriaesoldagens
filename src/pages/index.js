@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -128,8 +129,6 @@ export default function Home() {
                 <link rel="canonical" href="https://serralheriaesoldagens.vercel.app" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
 
-                <script src="https://cdn.tailwindcss.com"></script>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css" />
             </Head>
 
             {/* --- HEADER --- */}
@@ -139,11 +138,10 @@ export default function Home() {
                         <div className="relative w-12 h-12 md:w-16 md:h-16 transition-transform group-hover:scale-110">
                             <Image
                                 src="/logo2-serralheriaesoldagens.png"
-                                alt="Símbolo Serralheria"
+                                alt="Logo"
                                 fill
-                                priority // Adicione isso para carregar o logo instantaneamente
-                                sizes="(max-width: 768px) 50px, 100px"
-                                className="object-contain drop-shadow-[0_0_8px_rgba(0,123,255,0.8)]"
+                                sizes="128px" // Tamanho aproximado que ele ocupa na tela
+                                className="object-contain"
                             />
                         </div>
                         <div className="hidden lg:block relative w-64 h-12">
@@ -158,22 +156,52 @@ export default function Home() {
                         </div>
                     </Link>
 
+                    {/* Menu Desktop */}
                     <nav className="hidden lg:flex items-center gap-8">
                         {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                            <Link key={item} href={`#${item.toLowerCase()}`} className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group">
+                            <Link
+                                key={item}
+                                href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                                className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
+                            >
                                 {item}
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
-                        <Link href="https://wa.me/5561993294211" target='_blank' className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
+                        {/* Link de Orçamento Externo */}
+                        <a
+                            href="https://wa.me/5561993294211"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all"
+                        >
                             Orçamento
-                        </Link>
+                        </a>
                     </nav>
 
+                    {/* Botão Mobile */}
                     <button className="lg:hidden text-3xl text-blue-500" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         <i className={`bi ${mobileMenuOpen ? 'bi-x' : 'bi-list'}`}></i>
                     </button>
                 </div>
+
+                {/* Overlay do Menu Mobile */}
+                {mobileMenuOpen && (
+                    <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 border-b border-blue-500/30 py-8 px-6 animate-in fade-in slide-in-from-top-4">
+                        <nav className="flex flex-col gap-6 text-center">
+                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
+                            <Link
+                                key={item}
+                                href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                                className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
+                            >
+                                {item}
+                                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
+                            </Link>
+                        ))}
+                        </nav>
+                    </div>
+                )}
             </header>
 
             {/* --- HERO --- */}
@@ -430,11 +458,8 @@ export default function Home() {
                                 {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
                                     <Link
                                         key={item}
-                                        // Se for Portifolio, vai para a rota /portifolio
-                                        // Para os outros, volta para a home / e busca a âncora #
                                         href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
-                                        className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group"
-                                    >
+                                        className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group">
                                         <i className="bi bi-chevron-double-right text-blue-primary group-hover:translate-x-1 transition-transform"></i>
                                         {item}
                                     </Link>

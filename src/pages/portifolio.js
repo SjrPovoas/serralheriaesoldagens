@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -139,7 +140,7 @@ export default function Portifolio() {
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
-                        {/* Link de Orçamento Externo corrigido */}
+                        {/* Link de Orçamento Externo */}
                         <a
                             href="https://wa.me/5561993294211"
                             target="_blank"
@@ -160,11 +161,16 @@ export default function Portifolio() {
                 {mobileMenuOpen && (
                     <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 border-b border-blue-500/30 py-8 px-6 animate-in fade-in slide-in-from-top-4">
                         <nav className="flex flex-col gap-6 text-center">
-                            {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                                <Link key={item} href={`/#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="text-lg uppercase font-bold tracking-widest hover:text-blue-500 transition-colors">
-                                    {item}
-                                </Link>
-                            ))}
+                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
+                            <Link
+                                key={item}
+                                href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                                className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
+                            >
+                                {item}
+                                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
+                            </Link>
+                        ))}
                         </nav>
                     </div>
                 )}
@@ -286,11 +292,8 @@ export default function Portifolio() {
                                 {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
                                     <Link
                                         key={item}
-                                        // Se for Portifolio, vai para a rota /portifolio
-                                        // Para os outros, volta para a home / e busca a âncora #
                                         href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
-                                        className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group"
-                                    >
+                                        className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group">
                                         <i className="bi bi-chevron-double-right text-blue-primary group-hover:translate-x-1 transition-transform"></i>
                                         {item}
                                     </Link>
