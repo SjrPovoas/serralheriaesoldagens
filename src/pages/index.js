@@ -35,33 +35,33 @@ export default function Home() {
     ];
 
     const categoriasServicos = [
-        { 
-            id: 'portoes', 
-            nome: 'Portões de Alta Performance', 
-            desc: 'Fabricação de portões basculantes e deslizantes com motores de alta velocidade.', 
-            icon: 'bi-door-open', 
-            img: '/images/portao-eletronico.jpg' 
+        {
+            id: 'portoes',
+            nome: 'Portões de Alta Performance',
+            desc: 'Fabricação de portões basculantes e deslizantes com motores de alta velocidade.',
+            icon: 'bi-door-open',
+            img: '/images/portao-eletronico.jpg'
         },
-        { 
-            id: 'estruturas', 
-            nome: 'Mezaninos e Estruturas', 
-            desc: 'Soldagem industrial para ampliação de espaços comerciais e residenciais.', 
-            icon: 'bi-layers', 
-            img: '/images/mezanino-metalico.jpg' 
+        {
+            id: 'estruturas',
+            nome: 'Mezaninos e Estruturas',
+            desc: 'Soldagem industrial para ampliação de espaços comerciais e residenciais.',
+            icon: 'bi-layers',
+            img: '/images/mezanino-metalico.jpg'
         },
-        { 
-            id: 'pergolados', 
-            nome: 'Pergolados e Grades', 
-            desc: 'Design moderno com resistência contra intempéries para áreas externas.', 
-            icon: 'bi-grid-3x3', 
-            img: '/images/pergolado.jpg' 
+        {
+            id: 'pergolados',
+            nome: 'Pergolados e Grades',
+            desc: 'Design moderno com resistência contra intempéries para áreas externas.',
+            icon: 'bi-grid-3x3',
+            img: '/images/pergolado.jpg'
         },
-        { 
-            id: 'seguranca', 
-            nome: 'Grades e Proteções', 
-            desc: 'Segurança reforçada com designs personalizados em ferro ou aço carbono.', 
-            icon: 'bi-shield-check', 
-            img: '/images/grades.jpg' 
+        {
+            id: 'grades',
+            nome: 'Grades e Proteções',
+            desc: 'Segurança reforçada com designs personalizados em ferro ou aço carbono.',
+            icon: 'bi-shield-check',
+            img: '/images/grades.jpg'
         }
     ];
 
@@ -72,7 +72,7 @@ export default function Home() {
             setShowWpp(window.scrollY > 400);
         };
         window.addEventListener('scroll', handleScroll);
-        
+
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
         }, 6000);
@@ -86,29 +86,86 @@ export default function Home() {
     const prevSlide = () => setCurrentIndex(currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
     const nextSlide = () => setCurrentIndex(currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
 
+    const handleScroll = () => {
+        const scrolled = window.scrollY > 50;
+        setIsScrolled(scrolled);
+        setShowWpp(window.scrollY > 300); // Aparece após rolar 300px
+    };
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30">
-            
+
+            <Head>
+                {/* SEO COMPLETO */}
+                <meta charSet="UTF-8" />
+                <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="title" content="Serralheria e Soldagens" />
+                <meta name="author" content="SjrPovoaS" />
+                <meta name="description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
+                <meta name="Keywords" content="serralheria, serralheiro, serralheria em Cidade Ocidental, serralheiro Cidade Ocidental, melhor serralheria em cidade ocidental, soldas em Cidade Ocidental" />
+                <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
+                <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+                <meta name="googlebot" content="index,follow" />
+                <meta name="google-site-verification" content="------" />
+
+                {/* Meta Tags para WhatsApp / Facebook (Open Graph) */}
+                <meta property="og:locale" content="pt_BR" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Serralheria e Soldagens" />
+                <meta property="og:url" content="https://serralheriaesoldagens.vercel.app" />
+                <meta property="og:image" content="https://serralheriaesoldagens.vercel.app/favicon.png" />
+                <meta name="og:image:width" content="1200" />
+                <meta name="og:image:height" content="630" />
+                <meta property="og:title" content="Serralheria e Soldagens" />
+                <meta property="og:description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
+
+                <title>Serralheria e Soldagens | A melhor serralheria em Cidade Ocidental</title>
+
+                {/* Fontes e Estilos Externos */}
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+                <link rel="canonical" href="https://serralheriaesoldagens.vercel.app" />
+                <link rel="profile" href="https://gmpg.org/xfn/11" />
+
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css" />
+            </Head>
+
             {/* --- HEADER --- */}
             <header className={`fixed top-0 w-full z-[1000] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 border-b border-blue-500/30' : 'bg-transparent py-6'}`}>
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <Link href="/" className="relative flex items-center gap-4 group">
                         <div className="relative w-12 h-12 md:w-16 md:h-16 transition-transform group-hover:scale-110">
-                            <Image src="/logo2-serralheriaesoldagens.png" alt="Símbolo Serralheria" fill className="object-contain drop-shadow-[0_0_8px_rgba(0,123,255,0.8)]" />
+                            <Image
+                                src="/logo2-serralheriaesoldagens.png"
+                                alt="Símbolo Serralheria"
+                                fill
+                                priority // Adicione isso para carregar o logo instantaneamente
+                                sizes="(max-width: 768px) 50px, 100px"
+                                className="object-contain drop-shadow-[0_0_8px_rgba(0,123,255,0.8)]"
+                            />
                         </div>
                         <div className="hidden lg:block relative w-64 h-12">
-                            <Image src="/logo3-serralheriaesoldagens.png" alt="Serralheria e Soldagens" fill className="object-contain" />
+                            <Image
+                                src="/logo3-serralheriaesoldagens.png"
+                                alt="Serralheria e Soldagens"
+                                fill
+                                priority // Adicione isso também
+                                sizes="(max-width: 1024px) 200px, 300px"
+                                className="object-contain"
+                            />
                         </div>
                     </Link>
 
                     <nav className="hidden lg:flex items-center gap-8">
-                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas'].map((item) => (
+                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
                             <Link key={item} href={`#${item.toLowerCase()}`} className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group">
                                 {item}
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
-                        <Link href="https://wa.me/5561993294211" className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
+                        <Link href="https://wa.me/5561993294211" target='_blank' className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
                             Orçamento
                         </Link>
                     </nav>
@@ -120,7 +177,7 @@ export default function Home() {
             </header>
 
             {/* --- HERO --- */}
-            <section className="relative h-[100vh] w-full overflow-hidden bg-black">
+            <section id="portifolio" className="relative h-[100vh] w-full overflow-hidden bg-black">
                 {slides.map((slide, index) => (
                     <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>
                         <Image src={slide.url} alt={slide.titulo} fill className="object-cover brightness-[0.3]" priority={index === 0} />
@@ -130,7 +187,7 @@ export default function Home() {
                             <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mb-10 font-light">{slide.subtitulo}</p>
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Link href="https://wa.me/5561993294211" target="_blank" className="bg-blue-600 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-blue-500 transition-all">Falar com Especialista</Link>
-                                <Link href="/portifolio" target="_blank" className="border border-white/30 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:border-blue-500 transition-all">Ver Portfólio</Link>
+                                <Link href="/portifolio" className="border border-white/30 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:border-blue-500 transition-all">Ver Portfólio</Link>
                             </div>
                         </div>
                     </div>
@@ -239,7 +296,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">WhatsApp</p>
-                                        <p className="text-white text-xl font-bold">(61) 9 9329-4211</p>
+                                        <p className="text-white text-xl font-bold"><Link href="061993294211" target="_blank">(61) 9 9329-4211</Link></p>
                                     </div>
                                 </div>
 
@@ -249,7 +306,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">Localização</p>
-                                        <p className="text-white text-xl font-bold">Cidade Ocidental - GO</p>
+                                        <p className="text-white text-xl font-bold"><Link href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cidade Ocidental - GO</Link></p>
                                     </div>
                                 </div>
 
@@ -355,13 +412,8 @@ export default function Home() {
                         {/* col-span-2 faz com que esta div ocupe a largura total no mobile */}
                         <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
                             <Link href="/" className="relative w-32 h-30 mb-4 block">
-                                <Image
-                                    src="/logo-serralheriaesoldagens.png"
-                                    alt="Logo Serralheria e Soldagens"
-                                    fill
-                                    sizes="128px"
-                                    className="object-contain"
-                                />
+                                <Image src="/logo-serralheriaesoldagens.png" alt="Logo Serralheria e Soldagens"
+                                    fill sizes="128px" className="object-contain" />
                             </Link>
                             <p className="text-xs md:text-sm text-center md:text-left leading-relaxed opacity-70 max-w-xs">
                                 Especialistas em estruturas metálicas e soldagens de alta precisão.
@@ -375,10 +427,12 @@ export default function Home() {
                                 Mapa do Site
                             </h3>
                             <div className="flex flex-col gap-3 text-left">
-                                {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas'].map((item) => (
+                                {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
                                     <Link
                                         key={item}
-                                        href={`#${item.toLowerCase()}`}
+                                        // Se for Portifolio, vai para a rota /portifolio
+                                        // Para os outros, volta para a home / e busca a âncora #
+                                        href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                         className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group"
                                     >
                                         <i className="bi bi-chevron-double-right text-blue-primary group-hover:translate-x-1 transition-transform"></i>
@@ -414,7 +468,7 @@ export default function Home() {
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
 
-                                    <a href="https://www.google.com/maps/..." target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
+                                    <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
                                         <span className="font-bold tracking-tighter">Rua Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Mansões Recreio Mossoró. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
@@ -429,33 +483,42 @@ export default function Home() {
                     </div>
 
                     {/* LINHA 3 e 4 (Mobile): CRÉDITOS */}
-                    <div className="mt-12 pt-6 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-50">
+                    <div className="mt-12 pt-6 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-90">
                         {/* Terceira linha no celular */}
-                        <p className="text-center">Serralheria e Soldagens. © 2026 - Todos os direitos reservados</p>
+                        <p className="text-center">© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
                         {/* Quarta linha no celular */}
-                        <p className="text-center">
-                            Desenvolvido por{' '}
+                        <p className="text-center"> Desenvolvido por{' '}
                             <Link href="https://sjrpovoas.vercel.app/" target="_blank" className="text-blue-primary hover:text-blue-glow no-underline font-bold">
                                 SjrPovoaS
-                            </Link>
-                        </p>
+                            </Link></p>
+                        <p className="text-center"></p>
+                        <p className="text-center"></p>
                     </div>
                 </div>
             </footer>
 
-            { /* Botão Flutuante do Whastapp  */}
-            {showWpp && (
+            {/* BOTÕES FLUTUANTES */}
+            <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-[500] items-end">
+                {/* Botão Seta para o Topo */}
+                {isScrolled && (
+                    <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="w-12 h-12 bg-zinc-800/80 backdrop-blur-md border border-blue-500/50 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition-all shadow-lg flex items-center justify-center group"
+                        title="Voltar ao topo">
+                        <i className="bi bi-arrow-up text-xl group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                )}
+
+                {/* Botão WhatsApp - Agora visível por padrão ou baseado no scroll */}
                 <a href="https://wa.me/5561993294211" target="_blank" rel="noopener noreferrer"
-                    className="fixed bottom-18 right-4 z-95 flex items-center gap-1 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a] no-underline group"
+                    className="flex items-center gap-3 px-5 py-3 bg-[#25D366] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a] no-underline group"
                     style={{ boxShadow: '0 4px 15px rgba(37, 211, 102, 0.4)' }}>
-                    {/* Ícone do WhatsApp do Bootstrap Icons */}
                     <i className="bi bi-whatsapp text-2xl"></i>
-                    {/* Texto do Botão */}
                     <span className="font-bold text-sm md:text-base whitespace-nowrap">
                         Solicite um Orçamento
                     </span>
                 </a>
-            )}
+            </div>
         </div>
     );
 }

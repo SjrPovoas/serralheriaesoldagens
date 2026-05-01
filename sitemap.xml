@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <url>
+        <loc>https://serralheriaesoldagens.vercel.app/</loc>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.vercel.app/logo-serralheriaesoldagens.png</image:loc>
+            <image:title>Logo da Serralheria e Soldagens</image:title>
+        </image:image>
+        <lastmod>2026-05-01T12:00:04+00:00</lastmod> 
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://serralheriaesoldagens.vercel.app/portifolio</loc>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.vercel.app/images/grades.jpg</image:loc>
+            <image:title>Grade Residencial</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.vercel.app/images/mezanino-metalico.jpg</image:loc>
+            <image:title>Mezanino Residencial</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.vercel.app/images/portao-eletronico.jpg</image:loc>
+            <image:title>Portão Eletrônico Residencial</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.vercel.app/images/pergolado.jpg</image:loc>
+            <image:title>Pergolado</image:title>
+        </image:image>
+        <lastmod>2026-05-01T12:00:04+00:00</lastmod> 
+        <priority>1.00</priority>
+    </url>
+    
+    </urlset>
+
+
+        { id: 1, categoria: 'grades', src: '/', alt: 'Grade Residencial' },
+        { id: 2, categoria: 'estruturas', src: '/', alt: '' },
+        { id: 3, categoria: 'portoes', src: '/', alt: '' },
+        { id: 4, categoria: 'pergolados', src: '/', alt: '' },
+        

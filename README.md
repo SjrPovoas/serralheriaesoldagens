@@ -150,6 +150,13 @@ npm install bootstrap-icons
 
 </details>
 
+<details>
+<summary>GERADOR DE ÍCONES</summary>
+
+  - [Gerador de Ícones Online](https://www.aconvert.com/pt/icon/)
+
+</details>
+
 <p>
 
 ---

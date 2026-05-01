@@ -1,0 +1,6 @@
+Sitemap: https://serralheriaesoldagens.vercel.app/sitemap.xml
+
+User-agent: *
+Allow: /
+
+# This file was generated on Fri, 01 Mai 2025 12:00:35 +0000
