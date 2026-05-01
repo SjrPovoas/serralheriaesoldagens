@@ -329,7 +329,7 @@ export default function Home() {
                                         <i className="bi bi-whatsapp text-2xl"></i>
                                     </div>
                                     <div>
-                                        <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">WhatsApp</p>
+                                        <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">Comercial</p>
                                         <p className="text-white text-xl font-bold"><Link href="tel:061993294211" target="_blank">(61) 9 9329-4211</Link></p>
                                     </div>
                                 </div>
