@@ -174,7 +174,7 @@ export default function Home() {
                                 <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
                             </Link>
                         ))}
-                        {/* Link de Orçamento Externo */}
+                        {/* Link de Orçamento */}
                         <a
                             href="https://wa.me/5561993294211"
                             target="_blank"
@@ -330,7 +330,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">WhatsApp</p>
-                                        <p className="text-white text-xl font-bold"><Link href="061993294211" target="_blank">(61) 9 9329-4211</Link></p>
+                                        <p className="text-white text-xl font-bold"><Link href="tel:061993294211" target="_blank">(61) 9 9329-4211</Link></p>
                                     </div>
                                 </div>
 
@@ -483,7 +483,7 @@ export default function Home() {
                                 {/* Horário */}
                                 <div className="flex flex-col items-center md:items-end gap-1">
                                     <div className="flex items-center gap-2 text-blue-primary mb-1">
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Horário de Atendimento</span>
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Atendimento</span>
                                         <i className="bi bi-clock text-base"></i>
                                     </div>
                                     <div className="text-center md:text-right text-[12px] opacity-70 hover:text-blue-glow transition-all">

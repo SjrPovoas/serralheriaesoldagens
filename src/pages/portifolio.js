@@ -315,7 +315,7 @@ export default function Portifolio() {
                                 {/* Horário */}
                                 <div className="flex flex-col items-center md:items-end gap-1">
                                     <div className="flex items-center gap-2 text-blue-primary mb-1">
-                                        <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Horário de Atendimento</span>
+                                        <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Atendimento</span>
                                         <i className="bi bi-clock text-base"></i>
                                     </div>
                                     <div className="text-center md:text-right text-[12px] opacity-70 hover:text-blue-glow transition-all">
