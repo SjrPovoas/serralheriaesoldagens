@@ -90,8 +90,14 @@ export default function Portifolio() {
                 <meta name="Keywords" content="serralheria, serralheiro, serralheria em Cidade Ocidental, serralheiro Cidade Ocidental, melhor serralheria em cidade ocidental, soldas em Cidade Ocidental" />
                 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
-                <meta name="googlebot" content="index,follow" />
+                <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="------" />
+
+                <link rel="icon" sizes="32x32" href="/favicon.ico" />
+                <link rel="icon" sizes="192x192" href="/favicon.ico" />
+                <link rel="apple-touch-icon" type="/x-icon" href="/favicon.ico" />
+                <link rel="shortcut icon" type="/x-icon" href="/favicon.ico" />
+                <link rel="mask-icon" href="/favicon.ico" />
 
                 {/* Meta Tags para WhatsApp / Facebook (Open Graph) */}
                 <meta property="og:locale" content="pt_BR" />
@@ -112,8 +118,6 @@ export default function Portifolio() {
                 <link rel="canonical" href="https://serralheriaesoldagens.vercel.app/portifolio" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
 
-                <script src="https://cdn.tailwindcss.com"></script>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css" />
             </Head>
 
             {/* --- HEADER (IGUAL À PÁGINA PRINCIPAL) --- */}
