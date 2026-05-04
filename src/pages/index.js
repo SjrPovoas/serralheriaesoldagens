@@ -10,6 +10,13 @@ export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showWpp, setShowWpp] = useState(false);
 
+    // ESTADOS DO MODAL DE ORÇAMENTO
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [dados, setDados] = useState({
+        nome: '', endereco: '', telefone: '',
+        tipo: 'Personalizado', servico: 'Portão', local: ''
+    });
+
     // --- DEFINIÇÕES DE DADOS ---
     const slides = [
         {
@@ -52,14 +59,14 @@ export default function Home() {
         },
         {
             id: 'pergolados',
-            nome: 'Pergolados e Grades',
+            nome: 'Pergolados',
             desc: 'Design moderno com resistência contra intempéries para áreas externas.',
             icon: 'bi-grid-3x3',
             img: '/images/pergolado.jpg'
         },
         {
             id: 'grades',
-            nome: 'Grades e Proteções',
+            nome: 'Grades de proteções',
             desc: 'Segurança reforçada com designs personalizados em ferro ou aço carbono.',
             icon: 'bi-shield-check',
             img: '/images/grades.jpg'
@@ -92,6 +99,26 @@ export default function Home() {
         setIsScrolled(scrolled);
         setShowWpp(window.scrollY > 300); // Aparece após rolar 300px
     };
+
+    const enviarWhatsApp = (e) => {
+        e.preventDefault();
+        const fone = "5561993294211";
+        const texto = `Olá! Gostaria de um orçamento para a *Serralheria e Soldagens*.
+
+*MEUS DADOS:*
+• Nome: ${dados.nome}
+• Endereço: ${dados.endereco}
+• Telefone: ${dados.telefone}
+
+*DETALHES DO SERVIÇO:*
+• Tipo: ${dados.tipo}
+• Serviço: ${dados.servico}
+• Local da Execução: ${dados.local}`;
+
+        window.open(`https://wa.me/${fone}?text=${encodeURIComponent(texto)}`, '_blank');
+        setIsModalOpen(false);
+    };
+
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30">
 
@@ -142,7 +169,7 @@ export default function Home() {
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <Link href="/" className="relative flex items-center gap-4 group">
                         <div className="relative w-12 h-12 md:w-16 md:h-16 transition-transform group-hover:scale-110">
-                            <Image src="/logo2-serralheriaesoldagens.png"alt="Logo" 
+                            <Image src="/logo2-serralheriaesoldagens.png" alt="Logo"
                                 fill sizes="128px" className="object-contain"
                             />
                         </div>
@@ -155,7 +182,7 @@ export default function Home() {
 
                     {/* Menu Desktop */}
                     <nav className="hidden lg:flex items-center gap-8">
-                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
+                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio', ].map((item) => (
                             <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                 className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
                             > {item}
@@ -163,10 +190,10 @@ export default function Home() {
                             </Link>
                         ))}
                         {/* Link de Orçamento */}
-                        <a href="https://wa.me/5561993294211" target="_blank" rel="noopener noreferrer"
-                            className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
-                            Orçamento
-                        </a>
+                        <button onClick={() => setIsModalOpen(true)}
+                                className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
+                                Orçamento
+                        </button>
                     </nav>
 
                     {/* Botão Mobile */}
@@ -179,13 +206,13 @@ export default function Home() {
                 {mobileMenuOpen && (
                     <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 border-b border-blue-500/30 py-8 px-6 animate-in fade-in slide-in-from-top-4">
                         <nav className="flex flex-col gap-6 text-center">
-                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
-                            <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
-                                className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
-                            > {item}
-                                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
-                            </Link>
-                        ))}
+                            {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio', 'Orcamento'].map((item) => (
+                                <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
+                                    className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
+                                > {item}
+                                    <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span>
+                                </Link>
+                            ))}
                         </nav>
                     </div>
                 )}
@@ -201,8 +228,8 @@ export default function Home() {
                             <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter italic uppercase">{slide.titulo}</h1>
                             <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mb-10 font-light">{slide.subtitulo}</p>
                             <div className="flex flex-col md:flex-row gap-4">
-                                <Link href="https://wa.me/5561993294211" target="_blank" className="bg-blue-600 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-blue-500 transition-all">Falar com Especialista</Link>
-                                <Link href="/portifolio" className="border border-white/30 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:border-blue-500 transition-all">Ver Portfólio</Link>
+                                <Link href="#contato" className="bg-blue-600 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:bg-blue-500 transition-all">Falar com Especialista</Link>
+                                <Link href="/portifolio" className="border border-white/30 text-white px-10 py-4 rounded-sm font-black uppercase tracking-widest hover:border-blue-500 transition-all">Ver Portifólio</Link>
                             </div>
                         </div>
                     </div>
@@ -217,7 +244,7 @@ export default function Home() {
                     <div className="flex-1">
                         <h2 className="text-metal-text text-4xl font-bold mb-6 italic uppercase tracking-tighter">Nossa História</h2>
                         <p className="text-zinc-700 leading-relaxed text-lg mb-4">
-                            Atuamos com **soldagens de alta precisão**, trazendo soluções duráveis para estruturas metálicas em toda a região de **Cidade Ocidental - GO**.
+                            Atuamos com **soldagens de alta precisão**, trazendo soluções duráveis para estruturas metálicas em toda a região de <b>Cidade Ocidental - GO</b> e entorno.
                         </p>
                         <p className="text-zinc-600 leading-relaxed">
                             Nosso foco é unir a estética moderna com a resistência do aço, garantindo que cada projeto seja único e extremamente seguro.
@@ -225,7 +252,8 @@ export default function Home() {
                     </div>
                     <div className="flex-1 bg-industrial-gray p-10 rounded-2xl border-2 border-blue-primary shadow-2xl md:rotate-2">
                         <p className="text-white italic font-bold text-center text-xl">
-                            "Qualidade em cada solda, segurança em cada estrutura."
+                            "Qualidade em cada solda, segurança em cada estrutura."</p>
+                        <p className="text-white italic font-bold text-center text-xl">Silvano Ribeiro
                         </p>
                     </div>
                 </div>
@@ -334,19 +362,19 @@ export default function Home() {
                         </div>
 
                         {/* Bloco de Ação (CTA) */}
-                        <div className="flex flex-col items-center justify-center bg-blue-primary/5 p-10 rounded-xl border-2 border-dashed border-blue-primary/30">
+                        <section id="orcamento" className="flex flex-col items-center justify-center bg-blue-primary/5 p-10 rounded-xl border-2 border-dashed border-blue-primary/30">
                             <div className="text-center mb-8">
                                 <h3 className="text-white text-2xl font-bold mb-4">Pronto para iniciar seu projeto?</h3>
                                 <p className="text-silver-text text-sm opacity-80">
                                     Atendimento especializado para estruturas metálicas e soldagens de alta precisão.
                                 </p>
                             </div>
-                            <Link href="https://wa.me/5561993294211" target="_blank"
+                            <button onClick={() => setIsModalOpen(true)}
                                 className="btn-solicitar w-full text-center py-4 text-lg hover:scale-105 transition-transform">
                                 <i className="bi bi-chat-dots-fill mr-2"></i>
                                 SOLICITAR ORÇAMENTO AGORA
-                            </Link>
-                        </div>
+                            </button>
+                        </section>
                     </div>
                 </div>
             </section>
@@ -418,8 +446,7 @@ export default function Home() {
                                     fill sizes="128px" className="object-contain" />
                             </Link>
                             <p className="text-xs md:text-sm text-center md:text-left leading-relaxed opacity-70 max-w-xs">
-                                Especialistas em estruturas metálicas e soldagens de alta precisão.
-                                Qualidade e durabilidade para o seu projeto em Cidade Ocidental - GO e entorno.
+                                Fabricação e Instalação de portões basculantes, pivoltantes e deslizantes, escadas, estruturas metálicas, mezaninos e pergolados em Cidade Ocidental - GO e entorno.
                             </p>
                         </div>
                         {/* COLUNA 1 / LINHA 2 (Mobile): MAPA DO SITE */}
@@ -427,8 +454,8 @@ export default function Home() {
                             <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-5 border-b border-blue-primary pb-2">
                                 Mapa do Site
                             </h3>
-                            <div className="flex flex-col gap-3 text-left">
-                                {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio'].map((item) => (
+                            <div className="flex flex-col gap-3 uppercase text-left">
+                                {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio', 'Orcamento'].map((item) => (
                                     <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                         className="text-xs md:text-sm text-silver-text no-underline hover:text-blue-glow transition-all flex items-center gap-2 group">
                                         <i className="bi bi-chevron-double-right text-blue-primary group-hover:translate-x-1 transition-transform"></i>
@@ -445,7 +472,7 @@ export default function Home() {
                             <div className="flex flex-col gap-4 w-full">
                                 {/* Horário */}
                                 <div className="flex flex-col items-center md:items-end gap-1">
-                                    <div className="flex items-center gap-2 text-blue-primary mb-1">
+                                    <div className="flex items-center gap-2 text-blue-primary mb-1" title="Atendimento">
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Atendimento</span>
                                         <i className="bi bi-clock text-base"></i>
                                     </div>
@@ -456,17 +483,21 @@ export default function Home() {
                                 </div>
                                 {/* Links de Contato */}
                                 <div className="flex flex-col gap-3 items-center md:items-end">
-                                    <a href="tel:061993294211" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
-                                        <span className="font-bold tracking-tighter">(61) 9 9329-4211</span>
+                                    <a href="tel:061993294211" title="Telefone" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
+                                        <span className="font-bold uppercase tracking-tighter">(61) 9 9329-4211</span>
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
-                                    <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
-                                        <span className="font-bold tracking-tighter">Rua Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Mansões Recreio Mossoró. Cidade Ocidental-GO</span>
+                                    <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
+                                        <span className="font-bold uppercase tracking-tighter">R. Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Recreio Mossoró. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
-                                    <a href="https://www.instagram.com/serralheriaesoldagens" target="_blank" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
-                                        <span className="font-bold tracking-tighter">@serralheriaesoldagens</span>
+                                    <a href="https://www.instagram.com/serralheriaesoldagens" target="_blank" title="Instagram" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
+                                        <span className="font-bold uppercase tracking-tighter">@serralheriaesoldagens</span>
                                         <i className="bi bi-instagram text-blue-primary text-base"></i>
+                                    </a>
+                                    <a href="https://linktr.ee/serralheriaesoldagens" target="_blank" title="Linktr.ee" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
+                                        <span className="font-bold uppercase tracking-tighter">Linktr.ee</span>
+                                        <i className="bi bi-tree text-blue-primary text-base"></i>
                                     </a>
                                 </div>
                             </div>
@@ -477,10 +508,10 @@ export default function Home() {
                         {/* Terceira linha no celular */}
                         <p className="text-center">© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
                         {/* Quarta linha no celular */}
-                        <p className="text-center"> Desenvolvido por{' '}
-                            <Link href="https://sjrpovoas.vercel.app/" target="_blank" className="text-blue-primary hover:text-blue-glow no-underline font-bold">
-                                SjrPovoaS
-                            </Link></p>
+                        <p className="text-center">
+                            <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary hover:text-blue-glow no-underline font-bold">
+                                Desenvolvido por SjrPovoaS
+                            </a></p>
                         <p className="text-center"></p>
                         <p className="text-center"></p>
                     </div>
@@ -491,23 +522,72 @@ export default function Home() {
             <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-[500] items-end">
                 {/* Botão Seta para o Topo */}
                 {isScrolled && (
-                    <button
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="w-12 h-12 bg-zinc-800/80 backdrop-blur-md border border-blue-500/50 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition-all shadow-lg flex items-center justify-center group"
+                    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="fixed bottom-23 w-12 h-12 bg-zinc-800/80 backdrop-blur-md border border-blue-500/50 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition-all shadow-lg flex items-center justify-center group"
                         title="Voltar ao topo">
                         <i className="bi bi-arrow-up text-xl group-hover:-translate-y-1 transition-transform"></i>
                     </button>
                 )}
 
-                {/* Botão WhatsApp - Agora visível por padrão ou baseado no scroll */}
-                <a href="https://wa.me/5561993294211" target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-5 py-3 bg-[#25D366] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a] no-underline group"
-                    style={{ boxShadow: '0 4px 15px rgba(37, 211, 102, 0.4)' }}>
-                    <i className="bi bi-whatsapp text-2xl"></i>
-                    <span className="font-bold text-sm md:text-base whitespace-nowrap">
-                        Solicite um Orçamento
-                    </span>
-                </a>
+                {/* BOTÃO FLUTUANTE WHATSAPP (MODAL) */}
+                <div className={`fixed bottom-6 right-6 z-[999] transition-all duration-500 ${showWpp ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+                    <button onClick={() => setIsModalOpen(true)}
+                        className="flex items-center gap-1 px-3 py-3 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-all animate-pulse-subtle">
+                        <i className="bi bi-whatsapp text-2xl"></i>
+                        <span className="font-bold md:inline">Orçamento Rápido</span>
+                    </button>
+                </div>
+
+                {/* MODAL DE ORÇAMENTO */}
+                {isModalOpen && (
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+                        <div className="bg-[#121212] border border-blue-500/30 p-8 rounded-3xl w-full max-w-md relative animate-in fade-in zoom-in duration-300">
+                            <button onClick={() => setIsModalOpen(false)} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors">
+                                <i className="bi bi-x-lg text-xl"></i>
+                            </button>
+
+                            <h3 className="text-2xl font-black text-white mb-6 uppercase italic border-b border-blue-600 pb-2">Solicitar Orçamento</h3>
+
+                            <form onSubmit={enviarWhatsApp} className="space-y-4">
+                                <input type="text" placeholder="Nome Completo" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, nome: e.target.value })} />
+
+                                <input type="text" placeholder="Endereço da Obra" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, endereco: e.target.value })} />
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <select className="bg-black border border-zinc-800 p-4 rounded-xl text-white outline-none" onChange={e => setDados({ ...dados, tipo: e.target.value })}>
+                                        <option value="Personalizado">Serv. Personalizado</option>
+                                        <option value="Projetado">Serv. Projetado</option>
+                                    </select>
+                                    <select className="bg-black border border-zinc-800 p-4 rounded-xl text-white outline-none" onChange={e => setDados({ ...dados, servico: e.target.value })}>
+                                        <option value="Portão">Portão</option>
+                                        <option value="Grade">Grade</option>
+                                        <option value="Escada">Escada</option>
+                                        <option value="Estrutura/Mezanino">Estrutura/Mezanino</option>
+                                        <option value="Pergolado">Pergolado</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="Onde será o serviço? (Ex: Casa, Lote, Aptº)" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, local: e.target.value })} />
+
+                                <button type="submit" className="w-full bg-[#25D366] text-black font-black py-4 rounded-2xl hover:bg-[#20ba5a] transition-all flex items-center justify-center gap-2 mt-4 uppercase tracking-tighter">
+                                    <i className="bi bi-whatsapp text-xl"></i>
+                                    Enviar Orçamento
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                )}
+
+                <style jsx global>{`
+                @keyframes pulse-subtle {
+                    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+                    50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(37, 211, 102, 0.6); }
+                }
+                .animate-pulse-subtle { animation: pulse-subtle 3s infinite ease-in-out; }
+                  `}</style>
             </div>
         </div>
     );
