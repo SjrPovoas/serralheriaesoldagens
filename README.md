@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://serralheriaesoldagens.vercel.app/logo-serralheriaesoldagens.png">
+  <img src="https://serralheriaesoldagens.com.br/logo-serralheriaesoldagens.png">
 </p>
 
 ---
@@ -9,7 +9,7 @@ Site desenvolvido por SjrPovoaS para comércio Web2.
 
 ---
 ## MÍDIAS SOCIAIS
-- [Site](https://serralheriaesoldagens.vercel.app/)
+- [Site](https://serralheriaesoldagens.com.br/)
 - [Instagram](https://www.instagram.com/serralheriaesoldagens/)
 
 <br>

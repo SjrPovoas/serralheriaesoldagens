@@ -4,9 +4,6 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Simulação de autenticação (Substituir pelo Clerk depois)
-const isAdmin = true;
-
 export default function Portifolio() {
     const router = useRouter();
     const [filtro, setFiltro] = useState('todos');
@@ -21,12 +18,9 @@ export default function Portifolio() {
     // ESTADOS DO MODAL DE ORÇAMENTO
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dados, setDados] = useState({
-        nome: '', endereco: '', telefone: '',
+        nome: '', telefone: '', endereco: '',
         tipo: 'Personalizado', servico: 'Portão', local: ''
     });
-
-    // Estado do formulário de nova foto
-    const [novaFoto, setNovaFoto] = useState({ src: '', alt: '', categoria: 'portoes' });
 
     // --- EFEITOS E HANDLERS ---
     useEffect(() => {
@@ -65,13 +59,6 @@ export default function Portifolio() {
 
     ]);
 
-    const handleAddFoto = (e) => {
-        e.preventDefault();
-        setFotosPortifolio([...fotosPortifolio, { ...novaFoto, id: Date.now() }]);
-        setShowModal(false);
-        alert("Foto adicionada com sucesso!");
-    };
-
     const categorias = [
         { id: 'todos', nome: 'Todos' },
         { id: 'portoes', nome: 'Portões' },
@@ -97,8 +84,8 @@ export default function Portifolio() {
     
     *MEUS DADOS:*
     • Nome: ${dados.nome}
-    • Endereço: ${dados.endereco}
     • Telefone: ${dados.telefone}
+    • Endereço: ${dados.endereco}
     
     *DETALHES DO SERVIÇO:*
     • Tipo: ${dados.tipo}
@@ -215,15 +202,6 @@ export default function Portifolio() {
                 <div className="text-center mb-10">
                     <h1 className="text-5xl font-bold italic uppercase tracking-tighter text-white drop-shadow-sm">Portifólio</h1>
                     <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 mb-6"></div>
-
-                    {/* BOTÃO DE ADICIONAR FOTO PELO CLIENTE NA GALERIA DE SERVIÇOS PRESTADOS
-                    {isAdmin && (
-                        <button onClick={() => setShowModal(true)}
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-bold text-xs uppercase transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)]"
-                        > + Adicionar Nova Foto de Serviço Prestado
-                        </button>
-                    )}
-                    */}
                 </div>
 
                 <section className="container mx-auto px-6 py-12">
@@ -250,49 +228,6 @@ export default function Portifolio() {
                     </div>
                 </section>
             </main>
-
-            {/* MODAL DE CADASTRO */}
-            {showModal && (
-                <div className="fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4">
-                    <div className="bg-industrial-gray border-2 border-blue-primary p-8 rounded-xl w-full max-w-md shadow-2xl">
-                        <h2 className="text-2xl font-bold mb-6 italic uppercase tracking-tighter">Adicionar ao Portifólio</h2>
-                        <form onSubmit={handleAddFoto} className="space-y-4">
-                            <div>
-                                <label className="block text-xs font-bold uppercase text-zinc-400 mb-1">URL da Foto (ou nome do arquivo)</label>
-                                <input
-                                    type="text" required
-                                    className="w-full bg-metal-dark border border-zinc-700 p-2 rounded text-white"
-                                    onChange={(e) => setNovaFoto({ ...novaFoto, src: e.target.value })}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-xs font-bold uppercase text-zinc-400 mb-1">Descrição/Nome do Serviço</label>
-                                <input
-                                    type="text" required
-                                    className="w-full bg-metal-dark border border-zinc-700 p-2 rounded text-white"
-                                    onChange={(e) => setNovaFoto({ ...novaFoto, alt: e.target.value })}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-xs font-bold uppercase text-zinc-400 mb-1">Categoria</label>
-                                <select
-                                    className="w-full bg-metal-dark border border-zinc-700 p-2 rounded text-white"
-                                    onChange={(e) => setNovaFoto({ ...novaFoto, categoria: e.target.value })}
-                                >
-                                    <option value="portoes">Portões</option>
-                                    <option value="estruturas">Estruturas/Mezaninos</option>
-                                    <option value="pergolados">Pergolados</option>
-                                    <option value="grades">Grades de proteção</option>
-                                </select>
-                            </div>
-                            <div className="flex gap-4 mt-8">
-                                <button type="submit" className="flex-1 bg-blue-primary py-3 rounded font-bold uppercase text-sm">Salvar Foto</button>
-                                <button type="button" onClick={() => setShowModal(false)} className="flex-1 bg-zinc-700 py-3 rounded font-bold uppercase text-sm">Cancelar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            )}
 
             {/* FOOTER */}
             <footer className="py-12 bg-black border-t-2 border-blue-primary text-silver-text">
@@ -413,8 +348,8 @@ export default function Portifolio() {
                                 <input type="text" placeholder="Nome Completo" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, nome: e.target.value })} />
 
-                                <input type="text" placeholder="Endereço da Obra" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
-                                    onChange={e => setDados({ ...dados, endereco: e.target.value })} />
+                                <input type="text" placeholder="Telefone com DDD" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, telefone: e.target.value })} />
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <select className="bg-black border border-zinc-800 p-4 rounded-xl text-white outline-none" onChange={e => setDados({ ...dados, tipo: e.target.value })}>
@@ -429,6 +364,10 @@ export default function Portifolio() {
                                         <option value="Pergolado">Pergolado</option>
                                     </select>
                                 </div>
+
+                                <input type="text" placeholder="Endereço da Obra" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, endereco: e.target.value })} />
+
                                 <input type="text" placeholder="Onde será o serviço? (Ex: Casa, Lote, Aptº)" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, local: e.target.value })} />
 

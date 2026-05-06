@@ -13,7 +13,7 @@ export default function Home() {
     // ESTADOS DO MODAL DE ORÇAMENTO
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dados, setDados] = useState({
-        nome: '', endereco: '', telefone: '',
+        nome: '', telefone: '', endereco: '', 
         tipo: 'Personalizado', servico: 'Portão', local: ''
     });
 
@@ -104,20 +104,21 @@ export default function Home() {
         e.preventDefault();
         const fone = "5561993294211";
         const texto = `Olá! Gostaria de um orçamento para a *Serralheria e Soldagens*.
-
-*MEUS DADOS:*
-• Nome: ${dados.nome}
-• Endereço: ${dados.endereco}
-• Telefone: ${dados.telefone}
-
-*DETALHES DO SERVIÇO:*
-• Tipo: ${dados.tipo}
-• Serviço: ${dados.servico}
-• Local da Execução: ${dados.local}`;
-
+    
+    *MEUS DADOS:*
+    • Nome: ${dados.nome}
+    • Telefone: ${dados.telefone}
+    • Endereço: ${dados.endereco}
+    
+    *DETALHES DO SERVIÇO:*
+    • Tipo: ${dados.tipo}
+    • Serviço: ${dados.servico}
+    • Local da Execução: ${dados.local}`;
+    
         window.open(`https://wa.me/${fone}?text=${encodeURIComponent(texto)}`, '_blank');
         setIsModalOpen(false);
     };
+ 
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30">
@@ -291,7 +292,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-16 text-center">
-                        <Link href="https://wa.me/5561993294211" className="btn-solicitar">
+                        <Link href="#contato" className="btn-solicitar">
                             Consultar Viabilidade Técnica
                         </Link>
                     </div>
@@ -551,9 +552,9 @@ export default function Home() {
                             <form onSubmit={enviarWhatsApp} className="space-y-4">
                                 <input type="text" placeholder="Nome Completo" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, nome: e.target.value })} />
-
-                                <input type="text" placeholder="Endereço da Obra" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
-                                    onChange={e => setDados({ ...dados, endereco: e.target.value })} />
+                                
+                                <input type="text" placeholder="Telefone com DDD" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, telefone: e.target.value })} />
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <select className="bg-black border border-zinc-800 p-4 rounded-xl text-white outline-none" onChange={e => setDados({ ...dados, tipo: e.target.value })}>
@@ -568,6 +569,10 @@ export default function Home() {
                                         <option value="Pergolado">Pergolado</option>
                                     </select>
                                 </div>
+
+                                <input type="text" placeholder="Endereço da Obra" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
+                                    onChange={e => setDados({ ...dados, endereco: e.target.value })} />
+
                                 <input type="text" placeholder="Onde será o serviço? (Ex: Casa, Lote, Aptº)" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, local: e.target.value })} />
 
