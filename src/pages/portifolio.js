@@ -112,7 +112,7 @@ export default function Portifolio() {
                 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
                 <meta name="googlebot" content="all" />
-                <meta name="google-site-verification" content="y-HyeCgxgANfPzhXtz_mGMdlzJBmkTZfbpxZ_rhbw7o" />
+                <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
 
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
