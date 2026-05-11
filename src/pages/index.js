@@ -136,7 +136,7 @@ export default function Home() {
                 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
                 <meta name="googlebot" content="all" />
-                <meta name="google-site-verification" content="------" />
+                <meta name="google-site-verification" content="rj9-yKQenuTL7WznZzLhnZhRRqalrW8B9ptmhuewFiA" />
 
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
