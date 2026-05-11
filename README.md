@@ -11,8 +11,8 @@ Site desenvolvido por SjrPovoaS para comércio Web2.
 ## MÍDIAS SOCIAIS
 - [Site](https://serralheriaesoldagens.com.br/)
 - [Instagram](https://www.instagram.com/serralheriaesoldagens/)
+- [Linktr.ee](https://www.linktr.ee/serralheriaesoldagens/)
 
-<br>
 <br>
 
 ---
@@ -99,8 +99,8 @@ npm install bootstrap-icons
 <details>
 <summary>FRONTEND</summary>
 <ul>
-<li>HTML</li>
-<li>CSS</li>
+<li>NEXT.JS</li>
+<li>TAILWIND</li>
 </ul>
 </details>
 

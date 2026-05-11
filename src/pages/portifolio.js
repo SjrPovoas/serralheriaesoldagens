@@ -273,7 +273,8 @@ export default function Portifolio() {
                                         <i className="bi bi-clock text-base"></i>
                                     </div>
                                     <div className="text-center md:text-right text-[12px] opacity-70 hover:text-blue-glow transition-all">
-                                        <p className="m-0">Seg - Sex | 08:00 às 17:30</p>
+                                        <p className="m-0">Seg - Qui | 07:30 às 17:30</p>
+                                        <p className="m-0">Sex | 07:30 às 16:30</p>
                                         <p className="m-0 italic">Sáb - Dom - Feriado | Fechado</p>
                                     </div>
                                 </div>

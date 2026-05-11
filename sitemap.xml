@@ -9,7 +9,15 @@
             <image:loc>https://serralheriaesoldagens.com.br/logo-serralheriaesoldagens.png</image:loc>
             <image:title>Logo da Serralheria e Soldagens</image:title>
         </image:image>
-        <lastmod>2026-05-05T22:00:04+00:00</lastmod> 
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.com.br/logo2-serralheriaesoldagens.png</image:loc>
+            <image:title>Logo2 SS da Serralheria e Soldagens</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://serralheriaesoldagens.com.br/logo3-serralheriaesoldagens.png</image:loc>
+            <image:title>Logo3 nome da Serralheria e Soldagens</image:title>
+        </image:image>
+        <lastmod>2026-05-11T12:00:04+00:00</lastmod> 
         <priority>1.00</priority>
     </url>
     <url>
@@ -30,7 +38,7 @@
             <image:loc>https://serralheriaesoldagens.com.br/images/pergolado.jpg</image:loc>
             <image:title>Pergolado</image:title>
         </image:image>
-        <lastmod>2026-05-05T22:00:04+00:00</lastmod> 
+        <lastmod>2026-05-11T12:00:04+00:00</lastmod> 
         <priority>1.00</priority>
     </url>
     
