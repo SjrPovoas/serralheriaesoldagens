@@ -105,14 +105,17 @@ export default function Portifolio() {
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
                 <meta name="format-detection" content="telephone=no" />
-                <meta name="title" content="Serralheria e Soldagens | Portifólio" />
+                <meta name="title" content="Nosso Portfólio de Projetos | Serralheria e Soldagens" />
                 <meta name="author" content="SjrPovoaS" />
-                <meta name="description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
-                <meta name="Keywords" content="serralheria, serralheiro, serralheria em Cidade Ocidental, serralheiro Cidade Ocidental, melhor serralheria em cidade ocidental, soldas em Cidade Ocidental" />
+                <meta name="description" content="Confira nossos projetos realizados em Cidade Ocidental e DF. Fotos de portões, estruturas metálicas, mezaninos e esquadrias de alto padrão fabricadas pela Serralheria e Soldagens." />
+                <meta name="Keywords" content="projetos de serralheria, serralheiro, fotos de portões, serviços realizados, serralheria em Cidade Ocidental, serralheiro Cidade Ocidental, melhor serralheria em cidade ocidental, soldas em Cidade Ocidental" />
                 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
+
+                {/* VERIFICAÇÕES E ROBOTS */}
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
                 <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
+                <meta name="ahrefs-site-verification" content="b3bf5b6aa98bea70da2fde3847d7843db33283b82f85e4656c9564b9d393680a" />
 
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
@@ -124,19 +127,20 @@ export default function Portifolio() {
                 <meta property="og:locale" content="pt_BR" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Serralheria e Soldagens | Portifólio" />
-                <meta property="og:url" content="https://serralheriaesoldagens.vercel.app" />
-                <meta property="og:image" content="https://serralheriaesoldagens.vercel.app/favicon.png" />
+                <meta property="og:url" content="https://serralheriaesoldagens.com.br" />
+                <meta property="og:image" content="https://serralheriaesoldagens.com.br/favicon.png" />
                 <meta name="og:image:width" content="1200" />
                 <meta name="og:image:height" content="630" />
                 <meta property="og:title" content="Serralheria e Soldagens" />
                 <meta property="og:description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
 
-                <title>Portifólio | Serralheria e Soldagens | A melhor serralheria em Cidade Ocidental</title>
+                <title>Nosso Portfólio de Projetos | Serralheria e Soldagens</title>
 
-                {/* Fontes e Estilos Externos */}
+                {/* FONTES E ESTILOS EXTERNOS */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-                <link rel="canonical" href="https://serralheriaesoldagens.vercel.app/portifolio" />
+                <link rel="canonical" href="https://serralheriaesoldagens.com.br/portifolio" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
 
             </Head>

@@ -4,15 +4,25 @@
 
 ---
 ## SOBRE O PROJETO
+Site web2 desenvolvido para a empresa de serralheria localizada em Cidade Ocidental - GO <a href="https://serralheriaesoldagens.com.br" target="_blank">Serralheria e Soldagens</a>.
 
-Site desenvolvido por SjrPovoaS para comércio Web2.
 
 ---
-## MÍDIAS SOCIAIS
-- [Site](https://serralheriaesoldagens.com.br/)
-- [Instagram](https://www.instagram.com/serralheriaesoldagens/)
-- [Linktr.ee](https://www.linktr.ee/serralheriaesoldagens/)
+## CONECTE-SE COMIGO
+<div>
+  <a href="https://www.linkedin.com/in/sjrpovoas" target="_blank"><img src="https://img.shields.io/twitter/follow/sjrpovoas?style=for-the-badge&label=linkedin&labelColor=2196f3&color=2196f3&link=https%3A%2F%2Fwww.x.com%2Fsjrpovoas" target="_blank"></a>
+  <a href="https://www.x.com/sjrpovoas" target="_blank"><img src="https://img.shields.io/twitter/follow/sjrpovoas?style=for-the-badge&logo=X&logoSize=250&label=%2F%20Twitter&labelColor=000000&color=000000&cacheSeconds=3600&link=https%3A%2F%2Fx.com%2Fsjrpovoas" target="_blank"></a>
+  <a href="https://github.com/SjrPovoas" target="_blank"><img src="https://img.shields.io/twitter/follow/SjrPovoas?style=for-the-badge&logo=github&logoColor=%23ffffffff&logoSize=250&label=github&labelColor=%23666666&color=%23666666&cacheSeconds=3600&link=https%3A%2F%2Fgithub.com%2FSjrPovoas"></a>
+  <a href="https://www.instagram.com/silviopovoasjunior" target="_blank"><img src="https://img.shields.io/twitter/follow/silviopovoasjunior?style=for-the-badge&logo=instagram&logoColor=%23ffffffff&logoSize=250&label=instagram&labelColor=%23ff6c3f&color=%23ff6c3f&cacheSeconds=3600&link=https%3A%2F%2Fwww.instagram.com%2Fsilviopovoasjunior" target="_blank"></a>
+</div>
 
+---
+## AGRADECIMENTOS
+<div>
+  Ao <a href="https://serralheriaesoldagens.com.br/#sobre" target="_blank">Silvano Ribeiro</a> pela confiança em nossos serviços. 
+</div>
+
+<br>
 <br>
 
 ---
@@ -114,7 +124,6 @@ npm install bootstrap-icons
 ---
 ## 3. RECURSOS UTILIZADOS NA PARTE VISUAL
 
-****
 <details>
 <summary>FONTS</summary>
 
@@ -157,17 +166,85 @@ npm install bootstrap-icons
 
 </details>
 
+---
+## 5. CONFIGURAÇÃO DE REDIRECIONAMENTO
+
+<details>
+<summary>DOMÍNIO | CONFIGURAÇÃO | DESTINO</summary>
+<ul>
+<li>serralheriaesoldagens.com.br     | Connect to Production |	(Nenhum, ele é o principal)</li>
+<li>www.serralheriaesoldagens.com.br | Redirect (301)	       | serralheriaesoldagens.com.br</li>
+</ul>
+</details>
+
+---
+## 6. FLUXO DE ENVIO E RECEBIMENTO DE EMAIL CORPORATIVO
+
+<details>
+<summary>FORWARD EMAIL</summary>
+<ul>
+<li><b>Serviço de encaminhamento (RELAY)</b>
+<br>
+Ele não possui uma caixa de entrada para fazer login e ler e-mails. Ele apenas recebe a mensagem enviada para o seu domínio e a "empurra" instantaneamente para outro endereço (como o seu Gmail Corporativo).
+<br>
+O foco principal é o recebimento. Para responder ou enviar e-mails usando o seu domínio através dele, você configura o SMTP de outro provedor ou usa os recursos de "Enviar como" do Gmail.
+<br>
+Oferece um plano gratuito generoso com aliases ilimitados.
+<br>
+Uso do Alias Global (Catch-all): Uma função muito comum aqui é o "catch-all". Você pode configurar um asterisco (*@seudominio.com). Assim, qualquer coisa que inventar antes do "@" (como teste@, suporte@, vendas@) será entregue na sua conta principal, sem você precisar criar um por um.
+</li>
+</ul>
+<ul>
+<li><b>Registros MX</b>
+<br>
+Prioridade | Host/Nome | Valor (Destino)
+<br>
+10 | @ |mx1.forwardemail.net
+<br>
+10 | @ | mx2.forwardemail.net
+</li>
+<li><b>Registro TXT (Configuração)</b>
+<br>
+Nome: @
+<br>
+Valor: forward-email=*@serralheriaesoldagens@gmail.com
+</li>
+<li><b>Registro TXT (SPF) para garantir que os e-mails não caiam no spam</b>
+<br>
+Nome: @
+<br>
+Valor: v=spf1 include:_spf.forwardemail.net -all
+</li>
+<li><b>Configurações do Servidor SMTP (Google)</b>
+<br>
+Servidor SMTP:	smtp.gmail.com
+<br>
+Porta (SSL):	465
+<br>
+Porta (TLS/STARTTLS):	587 (Recomendada para Next.js/Node.js)
+<br>
+Requer Autenticação:	Sim
+<br>
+Usuário: serralheriaesoldagens@gmail.com
+<br>
+Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
+</li>
+</ul>
+</details>
+
 <p>
 
 ---
-## 4. CONHEÇA O TIME
+## 7. CONHEÇA O TIME
 
 Nome | Título | Linkedin | X/Twitter | GitHub | Instagram
 ---|---|---|---|---|---
-Silvio Povoas | Desenvolvedor e Fundador | [sjrpovoas](https://www.linkedin.com/in/sjrpovoas) | [sjrpovoas](https://www.x.com/sjrpovoas) | [SjrPovoas](https://github.com/SjrPovoas) | [@silviopovoasjunior](https://www.instagram.com/silviopovoasjunior)
-Silvano Ribeiro | Empresário | X | X | X | [@silvanoribeirodesouzafilho](https://www.instagram.com/silvanoribeirodesouzafilho)
-***
+Silvio Póvoas | Desenvolvedor | [sjrpovoas](https://www.linkedin.com/in/sjrpovoas) | [sjrpovoas](https://www.x.com/sjrpovoas) | [SjrPovoas](https://github.com/SjrPovoas) | [@silviopovoasjunior](https://www.instagram.com/silviopovoasjunior)
+Silvano Ribeiro | Empresário | X | X | X | [@serralheriaesoldagens](https://www.instagram.com/serralheriaesoldagens)
 
+
+***
+Última atualização: 15/05/2026 - 15:43
 <p align="center">
   &COPY; 2026 Serralheria e Soldagens
 </p>

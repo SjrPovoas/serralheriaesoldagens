@@ -13,7 +13,7 @@ export default function Home() {
     // ESTADOS DO MODAL DE ORÇAMENTO
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dados, setDados] = useState({
-        nome: '', telefone: '', endereco: '', 
+        nome: '', telefone: '', endereco: '',
         tipo: 'Personalizado', servico: 'Portão', local: ''
     });
 
@@ -114,11 +114,11 @@ export default function Home() {
     • Tipo: ${dados.tipo}
     • Serviço: ${dados.servico}
     • Local da Execução: ${dados.local}`;
-    
+
         window.open(`https://wa.me/${fone}?text=${encodeURIComponent(texto)}`, '_blank');
         setIsModalOpen(false);
     };
- 
+
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30">
@@ -137,6 +137,7 @@ export default function Home() {
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
                 <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
+                <meta name="ahrefs-site-verification" content="b3bf5b6aa98bea70da2fde3847d7843db33283b82f85e4656c9564b9d393680a" />
 
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
@@ -148,8 +149,8 @@ export default function Home() {
                 <meta property="og:locale" content="pt_BR" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Serralheria e Soldagens" />
-                <meta property="og:url" content="https://serralheriaesoldagens.vercel.app" />
-                <meta property="og:image" content="https://serralheriaesoldagens.vercel.app/favicon.png" />
+                <meta property="og:url" content="https://serralheriaesoldagens.com.br" />
+                <meta property="og:image" content="https://serralheriaesoldagens.com.br/favicon.png" />
                 <meta name="og:image:width" content="1200" />
                 <meta name="og:image:height" content="630" />
                 <meta property="og:title" content="Serralheria e Soldagens" />
@@ -160,7 +161,7 @@ export default function Home() {
                 {/* Fontes e Estilos Externos */}
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-                <link rel="canonical" href="https://serralheriaesoldagens.vercel.app" />
+                <link rel="canonical" href="https://serralheriaesoldagens.com.br" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
 
             </Head>
@@ -183,7 +184,7 @@ export default function Home() {
 
                     {/* Menu Desktop */}
                     <nav className="hidden lg:flex items-center gap-8">
-                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio', ].map((item) => (
+                        {['Sobre', 'Materiais', 'Servicos', 'Contato', 'Duvidas', 'Portifolio',].map((item) => (
                             <Link key={item} href={item === 'Portifolio' ? '/portifolio' : `/#${item.toLowerCase()}`}
                                 className="text-sm uppercase font-bold tracking-[2px] text-gray-300 hover:text-blue-400 transition-colors relative group"
                             > {item}
@@ -192,8 +193,8 @@ export default function Home() {
                         ))}
                         {/* Link de Orçamento */}
                         <button onClick={() => setIsModalOpen(true)}
-                                className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
-                                Orçamento
+                            className="ml-4 px-6 py-2 border-2 border-blue-500 text-blue-500 font-bold uppercase text-xs tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all">
+                            Orçamento
                         </button>
                     </nav>
 
@@ -245,7 +246,7 @@ export default function Home() {
                     <div className="flex-1">
                         <h2 className="text-metal-text text-4xl font-bold mb-6 italic uppercase tracking-tighter">Nossa História</h2>
                         <p className="text-zinc-700 leading-relaxed text-lg mb-4">
-                            Atuamos com **soldagens de alta precisão**, trazendo soluções duráveis para estruturas metálicas em toda a região de <b>Cidade Ocidental - GO</b> e entorno.
+                            Atuamos com **soldagens de alta precisão**, trazendo soluções duráveis para estruturas metálicas em toda a região de <b>Cidade Ocidental - GO</b> e entorno do DF.
                         </p>
                         <p className="text-zinc-600 leading-relaxed">
                             Nosso foco é unir a estética moderna com a resistência do aço, garantindo que cada projeto seja único e extremamente seguro.
@@ -314,6 +315,36 @@ export default function Home() {
                                 </div>
                             </Link>
                         ))}
+                    </div>
+                </div>
+                {/* BOTÃO DE AVALIAÇÃO GOOGLE - Abaixo das fotos */}
+                <div className="flex flex-col items-center justify-center mt-12 mb-8 px-6 text-center">
+                    <p className="text-zinc-400 text-sm mb-4 uppercase tracking-widest font-bold italic">
+                        Sua opinião é fundamental para nós
+                    </p>
+
+                    <a
+                        href="https://g.page/r/CZuVl7LtsNYkEAE/review"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-black hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] group uppercase italic tracking-tighter"
+                    >
+                        {/* Ícone do Google colorido por padrão ou branco no hover */}
+                        <svg className="w-6 h-6" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                            <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                            <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                            <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                        </svg>
+                        Avaliar no Google Meu Negócio
+                    </a>
+
+                    <div className="mt-4 flex gap-1 text-yellow-500">
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
+                        <i className="bi bi-star-fill"></i>
                     </div>
                 </div>
             </section>
@@ -394,7 +425,7 @@ export default function Home() {
                             },
                             {
                                 q: "Vocês atendem apenas na Cidade Ocidental?",
-                                a: "Atendemos com prontidão em Cidade Ocidental - GO e em todo o entorno, garantindo a mesma qualidade e agilidade técnica em toda a região."
+                                a: "Atendemos com prontidão em Cidade Ocidental - GO e em todo o entorno do DF, garantindo a mesma qualidade e agilidade técnica em toda a região."
                             },
                             {
                                 q: "Como posso solicitar um orçamento?",
@@ -447,7 +478,7 @@ export default function Home() {
                                     fill sizes="128px" className="object-contain" />
                             </Link>
                             <p className="text-xs md:text-sm text-center md:text-left leading-relaxed opacity-70 max-w-xs">
-                                Fabricação e Instalação de portões basculantes, pivoltantes e deslizantes, escadas, estruturas metálicas, mezaninos e pergolados em Cidade Ocidental - GO e entorno.
+                                Fabricação e Instalação de portões basculantes, pivoltantes e deslizantes, escadas, estruturas metálicas, mezaninos e pergolados em Cidade Ocidental - GO e entorno do DF.
                             </p>
                         </div>
                         {/* COLUNA 1 / LINHA 2 (Mobile): MAPA DO SITE */}
@@ -553,7 +584,7 @@ export default function Home() {
                             <form onSubmit={enviarWhatsApp} className="space-y-4">
                                 <input type="text" placeholder="Nome Completo" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, nome: e.target.value })} />
-                                
+
                                 <input type="text" placeholder="Telefone com DDD" required className="w-full bg-black border border-zinc-800 p-4 rounded-xl text-white focus:border-blue-600 outline-none transition-all"
                                     onChange={e => setDados({ ...dados, telefone: e.target.value })} />
 

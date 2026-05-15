@@ -3,4 +3,4 @@ Sitemap: https://serralheriaesoldagens.com.br/sitemap.xml
 User-agent: *
 Allow: /
 
-# This file was generated on Mon, 11 Mai 2025 12:00:35 +0000
+# This file was generated on Fri, 15 Mai 2025 12:00:35 +0000
