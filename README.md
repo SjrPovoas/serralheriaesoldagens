@@ -181,7 +181,65 @@ npm install bootstrap-icons
 ## 6. FLUXO DE ENVIO E RECEBIMENTO DE EMAIL CORPORATIVO
 
 <details>
-<summary>FORWARD EMAIL</summary>
+<summary>IMPROVMX</summary>
+<ul>
+<li><b>Serviço de encaminhamento (RELAY)</b>
+<br>
+Ele não possui uma caixa de entrada para fazer login e ler e-mails. Ele apenas recebe a mensagem enviada para o seu domínio e a "empurra" instantaneamente para outro endereço (como o seu Gmail Corporativo).
+<br>
+O foco principal é o recebimento. Para responder ou enviar e-mails usando o seu domínio através dele, você configura o SMTP de outro provedor ou usa os recursos de "Enviar como" do Gmail.
+<br>
+Oferece um plano gratuito generoso com aliases ilimitados.
+<br>
+Uma vez dentro do painel do ImprovMX, você verá que ele já cria automaticamente um alias de * (catch-all) apontando para o seu Gmail. Se quiser criar especificamente o contato@, basta adicionar uma linha lá dentro.
+<br>
+Após salvar as alterações no DNS, o próprio painel do ImprovMX vai mostrar um aviso verde de "Active".
+<br>
+<li><b>Criar conta gratuita</b>
+<br>
+Acesse https://improvmx.com/ e utilize o email do gmail de preferência.
+</li>
+</ul>
+<ul>
+<li><b>Registros MX</b>
+<br>
+Prioridade | Host/Nome | Valor (Destino)
+<br>
+10 | @ | mx1.improvmx.com
+<br>
+20 | @ | mx2.improvmx.com
+</li>
+<li><b>Registro TXT (Configuração)</b>
+<br>
+Nome: @
+<br>
+Valor: forward-email=*@serralheriaesoldagens@gmail.com
+</li>
+<li><b>Registro TXT (SPF) para garantir que os e-mails não caiam no spam</b>
+<br>
+Nome: @
+<br>
+Valor: v=spf1 include:spf.improvmx.com ~all
+</li>
+<li><b>Configurações do Servidor SMTP (Google)</b>
+<br>
+Servidor SMTP:	smtp.gmail.com
+<br>
+Porta (SSL):	465
+<br>
+Porta (TLS/STARTTLS):	587 (Recomendada para Next.js/Node.js)
+<br>
+Requer Autenticação:	Sim
+<br>
+Usuário: serralheriaesoldagens@gmail.com
+<br>
+Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
+</li>
+</ul>
+</details>
+
+<details>
+<summary>FORWARD EMAIL (PLANO GRATUITO RECUSADO)</summary>
 <ul>
 <li><b>Serviço de encaminhamento (RELAY)</b>
 <br>
@@ -192,6 +250,8 @@ O foco principal é o recebimento. Para responder ou enviar e-mails usando o seu
 Oferece um plano gratuito generoso com aliases ilimitados.
 <br>
 Uso do Alias Global (Catch-all): Uma função muito comum aqui é o "catch-all". Você pode configurar um asterisco (*@seudominio.com). Assim, qualquer coisa que inventar antes do "@" (como teste@, suporte@, vendas@) será entregue na sua conta principal, sem você precisar criar um por um.
+<br>
+Criar conta gratuita em https://forwardemail.net/pt
 </li>
 </ul>
 <ul>
@@ -199,7 +259,7 @@ Uso do Alias Global (Catch-all): Uma função muito comum aqui é o "catch-all".
 <br>
 Prioridade | Host/Nome | Valor (Destino)
 <br>
-10 | @ |mx1.forwardemail.net
+10 | @ | mx1.forwardemail.net
 <br>
 10 | @ | mx2.forwardemail.net
 </li>
@@ -244,7 +304,7 @@ Silvano Ribeiro | Empresário | X | X | X | [@serralheriaesoldagens](https://www
 
 
 ***
-Última atualização: 15/05/2026 - 15:43
+Última atualização: 15/05/2026 - 19:43
 <p align="center">
   &COPY; 2026 Serralheria e Soldagens
 </p>
