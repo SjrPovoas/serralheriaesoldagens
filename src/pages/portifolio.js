@@ -29,22 +29,18 @@ export default function Portifolio() {
             setShowWpp(window.scrollY > 400);
         };
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [currentIndex]);
-
-    // Monitor de Rolagem (Efeito do Header)
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const [fotosPortifolio, setFotosPortifolio] = useState([]);
+
+    // Adicione esta lista de categorias logo após os estados
+    const categorias = [
+        { id: 'todos', nome: 'Todos' },
+        { id: 'portoes', nome: 'Portões' },
+        { id: 'grades', nome: 'Grades' },
+        { id: 'estruturas', nome: 'Estruturas/Mezaninos' }
+    ];
 
     useEffect(() => {
         async function carregarFotos() {
