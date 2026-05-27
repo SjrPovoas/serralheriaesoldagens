@@ -22,6 +22,14 @@ export default function Portifolio() {
         tipo: 'Personalizado', servico: 'Portão', local: ''
     });
 
+    const categorias = [
+        { id: 'todos', nome: 'Todos' },
+        { id: 'portoes', nome: 'Portões' },
+        { id: 'grades', nome: 'Grades' },
+        { id: 'pergolados', nome: 'Pergolados' },
+        { id: 'estruturas', nome: 'Estruturas/Mezaninos' }
+    ];
+
     // --- EFEITOS E HANDLERS ---
     useEffect(() => {
         const handleScroll = () => {
@@ -33,14 +41,6 @@ export default function Portifolio() {
     }, []);
 
     const [fotosPortifolio, setFotosPortifolio] = useState([]);
-
-    // Adicione esta lista de categorias logo após os estados
-    const categorias = [
-        { id: 'todos', nome: 'Todos' },
-        { id: 'portoes', nome: 'Portões' },
-        { id: 'grades', nome: 'Grades' },
-        { id: 'estruturas', nome: 'Estruturas/Mezaninos' }
-    ];
 
     useEffect(() => {
         async function carregarFotos() {
