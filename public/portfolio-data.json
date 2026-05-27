@@ -1,0 +1,26 @@
+[
+    { 
+      "id": 1, 
+      "categoria": "grades", 
+      "src": "/images/grades.jpg", 
+      "alt": "Grade Residencial" 
+    },
+    { 
+      "id": 2, 
+      "categoria": "estruturas", 
+      "src": "/images/mezanino-metalico.jpg", 
+      "alt": "Mezanino Residencial" 
+    },
+    { 
+      "id": 3, 
+      "categoria": "portoes", 
+      "src": "/images/portao-eletronico.jpg", 
+      "alt": "Portão Eletrônico Residencial" 
+    },
+    { 
+      "id": 4, 
+      "categoria": "pergolados", 
+      "src": "/images/pergolado.jpg", 
+      "alt": "Pergolado" 
+    }
+  ]

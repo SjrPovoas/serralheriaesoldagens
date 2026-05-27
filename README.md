@@ -102,6 +102,12 @@ npm run dev
 ```
 npm install bootstrap-icons
 ```
+```
+npm create sanity@latest -- --template clean --create-project "Serralheria Admin" --dataset production
+```
+```
+npm install uuid@latest
+```
 
 ---
 ## 2. TECNOLOGIAS USADAS
@@ -290,6 +296,20 @@ Usuário: serralheriaesoldagens@gmail.com
 Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
 </li>
 </ul>
+</details>
+
+<details>
+<summary>PAINEL ADMIN (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
+
+ - [Painel Admin - Decap CMS (Content Management System) serviço gratuito](serralheriaesoldagens.netlify.app)
+<ul>
+<li>Como funciona:</li>
+O cliente acessa o painel do Decap (pelo celular), faz o upload da foto e preenche os campos (Categoria, Título) e esse painel, ele administrativo cria automaticamente um novo commit no seu GitHub e atualiza o "portfolio-data.json" para você.
+<li>A mágica:</li>
+O CMS envia uma ordem para a Vercel reconstruir o site automaticamente.
+<li>Vantagem:</li>
+O Silvano não precisa tocar em código, nem em JSON, nem em GitHub. Ele só precisa "preencher formulários", com botões de "Adicionar Nova Foto", "Enviar Arquivo", com fotos. É a forma mais segura e à prova de erros para quem não é programador. Tudo é salvo direto no seu repositório atual.
+</lu>
 </details>
 
 <p>
