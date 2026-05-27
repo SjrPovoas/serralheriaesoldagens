@@ -1,26 +1,28 @@
-[
-    { 
-      "id": 1, 
-      "categoria": "grades", 
-      "src": "/images/grades.jpg", 
-      "alt": "Grade Residencial" 
-    },
-    { 
-      "id": 2, 
-      "categoria": "estruturas", 
-      "src": "/images/mezanino-metalico.jpg", 
-      "alt": "Mezanino Residencial" 
-    },
-    { 
-      "id": 3, 
-      "categoria": "portoes", 
-      "src": "/images/portao-eletronico.jpg", 
-      "alt": "Portão Eletrônico Residencial" 
-    },
-    { 
-      "id": 4, 
-      "categoria": "pergolados", 
-      "src": "/images/pergolado.jpg", 
-      "alt": "Pergolado" 
-    }
-  ]
+{
+    "projetos": [
+      {
+        "id": "1",
+        "title": "Portão Basculante Moderno",
+        "categoria": "portoes",
+        "image": "/images/portao-eletronico.jpg"
+      },
+      {
+        "id": "2",
+        "title": "Grade de Proteção Residencial",
+        "categoria": "grades",
+        "image": "/images/grades.jpg"
+      },
+      {
+        "id": "3",
+        "title": "Estrutura Metálica para Mezanino",
+        "categoria": "estruturas",
+        "image": "/images/mezanino-metalico.jpg"
+      },
+      { 
+        "id": 4,
+        "title": "Pergolado",
+        "categoria": "pergolados", 
+        "image": "/images/pergolado.jpg"
+      }
+    ]
+  }

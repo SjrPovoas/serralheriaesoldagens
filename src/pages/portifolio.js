@@ -47,7 +47,8 @@ export default function Portifolio() {
             try {
                 const response = await fetch('/portfolio-data.json');
                 const data = await response.json();
-                setFotosPortifolio(data);
+                // AQUI ESTÁ A MUDANÇA: acessamos o array dentro da chave "projetos"
+                setFotosPortifolio(data.projetos || []); 
             } catch (error) {
                 console.error("Erro ao carregar fotos do portfólio:", error);
             }
