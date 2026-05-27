@@ -44,33 +44,25 @@ export default function Portifolio() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const [fotosPortifolio, setFotosPortifolio] = useState([]);
 
     useEffect(() => {
-        if (router.query.categoria) {
-            setFiltro(router.query.categoria);
+        async function carregarFotos() {
+            try {
+                const response = await fetch('/portfolio-data.json');
+                const data = await response.json();
+                setFotosPortifolio(data);
+            } catch (error) {
+                console.error("Erro ao carregar fotos do portfólio:", error);
+            }
         }
-    }, [router.query.categoria]);
-
-    const [fotosPortifolio, setFotosPortifolio] = useState([
-        { id: 1, categoria: 'grades', src: '/images/grades.jpg', alt: 'Grade Residencial' },
-        { id: 2, categoria: 'estruturas', src: '/images/mezanino-metalico.jpg', alt: 'Mezanino Residencial' },
-        { id: 3, categoria: 'portoes', src: '/images/portao-eletronico.jpg', alt: 'Portão Eletrônico Residencial' },
-        { id: 4, categoria: 'pergolados', src: '/images/pergolado.jpg', alt: 'Pergolado' },
-
-    ]);
-
-    const categorias = [
-        { id: 'todos', nome: 'Todos' },
-        { id: 'portoes', nome: 'Portões' },
-        { id: 'estruturas', nome: 'Estruturas' },
-        { id: 'pergolados', nome: 'Pergolados' },
-        { id: 'grades', nome: 'Grades' },
-    ];
+        carregarFotos();
+    }, []);
 
     const fotosFiltradas = filtro === 'todos'
         ? fotosPortifolio
         : fotosPortifolio.filter(foto => foto.categoria === filtro);
-
+    // Dica: Se o Silvano for adicionar uma nova foto , ele deve adicionar uma vírgula após a última chave } da última foto e colar o novo bloco antes do ]
     const handleScroll = () => {
         const scrolled = window.scrollY > 50;
         setIsScrolled(scrolled);

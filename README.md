@@ -80,6 +80,30 @@ EX: git remote add https://github.com/SjrPovoas/serralheriaesoldagens.git
 ```
   git push -u origin main
 ```
+6. Cria uma nova branch chamada 'feature/admin'
+```
+git checkout -b feature/admin
+```
+7. Agora empurra essa branch para o GitHub
+```
+git push -u origin feature/admin
+```
+8. Crie o Pull Request:
+8.1. Vá até o seu repositório no GitHub.
+8.2. Você verá uma barra amarela ou um botão escrito "Compare & pull request". Clique nele.
+8.3. Clique em "Create pull request"
+8.4. Como você é o dono do repositório, verá um botão verde escrito "Merge pull request". Clique nele para confirmar a junção das mudanças com a main.
+8.5 Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a main agora está atualizada:
+8.5.1. Volta para a main
+```
+git checkout main
+```
+8.5.2. Baixa as novidades que acabamos de fazer o merge
+```
+git pull origin main
+```
+
+
 
 Esses são apenas alguns dos comandos mais comuns do **Git** que você pode usar na linha de comando.
 ```
@@ -101,6 +125,12 @@ npm run dev
 ```
 ```
 npm install bootstrap-icons
+```
+```
+npm create sanity@latest -- --template clean --create-project "Serralheria Admin" --dataset production
+```
+```
+npm install uuid@latest
 ```
 
 ---
@@ -290,6 +320,20 @@ Usuário: serralheriaesoldagens@gmail.com
 Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
 </li>
 </ul>
+</details>
+
+<details>
+<summary>PAINEL ADMIN (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
+
+ - [Painel Admin - Decap CMS (Content Management System) serviço gratuito](serralheriaesoldagens.netlify.app)
+<ul>
+<li>Como funciona:</li>
+O cliente acessa o painel do Decap (pelo celular), faz o upload da foto e preenche os campos (Categoria, Título) e esse painel, ele administrativo cria automaticamente um novo commit no seu GitHub e atualiza o "portfolio-data.json" para você.
+<li>A mágica:</li>
+O CMS envia uma ordem para a Vercel reconstruir o site automaticamente.
+<li>Vantagem:</li>
+O Silvano não precisa tocar em código, nem em JSON, nem em GitHub. Ele só precisa "preencher formulários", com botões de "Adicionar Nova Foto", "Enviar Arquivo", com fotos. É a forma mais segura e à prova de erros para quem não é programador. Tudo é salvo direto no seu repositório atual.
+</lu>
 </details>
 
 <p>

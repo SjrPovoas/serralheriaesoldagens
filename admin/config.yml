@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: SrjPovoas/serralheriaesoldagens
+  branch: main
+
+media_folder: "public/images" # Onde as fotos serão salvas
+public_folder: "/images"
+
+collections:
+  - name: "portfolio"
+    label: "Portfólio"
+    file: "portfolio-data.json" # O arquivo que você já tem
+    fields:
+      - {label: "Projetos", name: "projetos", widget: "list", fields: [
+          {label: "Título", name: "title", widget: "string"},
+          {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "estruturas"]},
+          {label: "Imagem", name: "image", widget: "image"}
+        ]}
