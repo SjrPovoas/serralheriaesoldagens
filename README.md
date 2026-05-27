@@ -80,6 +80,30 @@ EX: git remote add https://github.com/SjrPovoas/serralheriaesoldagens.git
 ```
   git push -u origin main
 ```
+6. Cria uma nova branch chamada 'feature/admin'
+```
+git checkout -b feature/admin
+```
+7. Agora empurra essa branch para o GitHub
+```
+git push -u origin feature/admin
+```
+8. Crie o Pull Request:
+8.1. Vá até o seu repositório no GitHub.
+8.2. Você verá uma barra amarela ou um botão escrito "Compare & pull request". Clique nele.
+8.3. Clique em "Create pull request"
+8.4. Como você é o dono do repositório, verá um botão verde escrito "Merge pull request". Clique nele para confirmar a junção das mudanças com a main.
+8.5 Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a main agora está atualizada:
+8.5.1. Volta para a main
+```
+git checkout main
+```
+8.5.2. Baixa as novidades que acabamos de fazer o merge
+```
+git pull origin main
+```
+
+
 
 Esses são apenas alguns dos comandos mais comuns do **Git** que você pode usar na linha de comando.
 ```
