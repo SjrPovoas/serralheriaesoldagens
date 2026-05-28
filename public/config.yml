@@ -9,10 +9,10 @@ collections:
     label: "Portfólio"
     files:
       - file: "portfolio-data.json"
-        label: "Lista de Projetos"
+        label: "Todos os Projetos"
         name: "portfolio"
         fields:
-          - label: "Projetos"
+          - label: "Serviço"
             name: "servicos"
             widget: "list"
             fields:
