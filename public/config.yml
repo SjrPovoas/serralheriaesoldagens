@@ -2,6 +2,9 @@ backend:
   name: github
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
+  base_url: https://api.github.com
+  auth_type: pkce
+  client_id: 688ac9554755ec3d9df73c36e905a60fc67bd2a2
 
 media_folder: "public/images"
 public_folder: "/images"

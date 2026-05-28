@@ -102,12 +102,6 @@ npm run dev
 ```
 npm install bootstrap-icons
 ```
-```
-npm create sanity@latest -- --template clean --create-project "Serralheria Admin" --dataset production
-```
-```
-npm install uuid@latest
-```
 
 ---
 ## 2. TECNOLOGIAS USADAS
