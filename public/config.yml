@@ -3,6 +3,7 @@ backend:
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
   auth_type: implicit
+  base_url: https://serralheriaesoldagens.vercel.app
   client_id: Ov23liFqMrisc0vP3FQe
 
 media_folder: "public/images"
