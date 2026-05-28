@@ -40,6 +40,8 @@ export default function Portifolio() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    
+
     const [fotosPortifolio, setFotosPortifolio] = useState([]);
 
     useEffect(() => {
@@ -52,10 +54,13 @@ export default function Portifolio() {
           .catch(err => console.error("Erro ao carregar JSON:", err));
       }, []);
 
-    const fotosFiltradas = filtro === 'todos'
-        ? fotosPortifolio
-        : fotosPortifolio.filter(foto => foto.categoria === filtro);
-    // Dica: Se o Silvano for adicionar uma nova foto , ele deve adicionar uma vírgula após a última chave } da última foto e colar o novo bloco antes do ]
+      {fotosPortifolio && fotosPortifolio.map((item, index) => (
+        <div key={index}>
+          <img src={item.image} alt={item.title} />
+          <h3>{item.title}</h3>
+        </div>
+      ))}
+
     const handleScroll = () => {
         const scrolled = window.scrollY > 50;
         setIsScrolled(scrolled);
