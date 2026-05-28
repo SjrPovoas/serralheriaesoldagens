@@ -9,12 +9,15 @@ public_folder: "/images"
 collections:
   - name: "portfolio"
     label: "Portfólio"
-    file: "portfolio-data.json"
-    fields:
-      - label: "Projetos"
-        name: "projetos"
-        widget: "list"
+    files:
+      - file: "portfolio-data.json"
+        label: "Portfólio de Projetos"
+        name: "portfolio"
         fields:
-          - {label: "Título", name: "title", widget: "string"}
-          - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "estruturas", "pergolados"]}
-          - {label: "Imagem", name: "image", widget: "image"}
+          - label: "Projetos"
+            name: "projetos"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "estruturas", "pergolados"]}
+              - {label: "Imagem", name: "image", widget: "image"}
