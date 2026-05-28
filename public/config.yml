@@ -2,7 +2,7 @@ backend:
   name: github
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
-  auth_type: pkce
+  auth_type: implicit
   client_id: Ov23liFqMrisc0vP3FQe
 
 media_folder: "public/images"
