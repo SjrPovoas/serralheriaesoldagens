@@ -6,16 +6,16 @@ public_folder: "/images"
 
 collections:
   - name: "portfolio"
-    label: "Portfólio"
+    label: "nosso Portfólio de Projetos da Serralheria e Soldagens"
     files:
       - file: "portfolio-data.json"
         label: "Todos os Projetos"
         name: "portfolio"
         fields:
-          - label: "Serviço"
+          - label: "Foto do Serviço"
             name: "servicos"
             widget: "list"
             fields:
-              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Título da Imagem", name: "title", widget: "string"}
               - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "pergolados", "estruturas"]}
               - {label: "Imagem", name: "image", widget: "image"}
