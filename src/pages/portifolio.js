@@ -37,7 +37,7 @@ export default function Portifolio() {
             .then(res => res.json())
             .then(data => {
                 // Acessa o array 'projetos' conforme estruturado no JSON
-                setFotosPortifolio(data.projetos || []);
+                setFotosPortifolio(data.servicos || []);
             })
             .catch(err => console.error("Erro ao carregar JSON:", err));
     }, []);

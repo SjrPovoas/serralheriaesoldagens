@@ -4,16 +4,16 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
-todos:
+collections:
   - name: "portfolio"
-    label: "Nosso Portfólio de Projetos"
+    label: "Portfólio"
     files:
       - file: "portfolio-data.json"
         label: "Lista de Projetos"
         name: "portfolio"
         fields:
-          - label: "Serviços"
-            name: "projetos"
+          - label: "Projetos"
+            name: "servicos"
             widget: "list"
             fields:
               - {label: "Título", name: "title", widget: "string"}
