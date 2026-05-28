@@ -2,8 +2,6 @@ backend:
   name: github
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
-  base_url: https://api.github.com
-  auth_endpoint: login/oauth/authorize
   auth_type: pkce
   client_id: Ov23liFqMrisc0vP3FQe
 
