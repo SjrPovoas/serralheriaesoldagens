@@ -11,7 +11,7 @@ collections:
     label: "Portfólio"
     files:
       - file: "portfolio-data.json"
-        label: "Portfólio de Projetos"
+        label: "Lista de Projetos"
         name: "portfolio"
         fields:
           - label: "Projetos"
@@ -19,5 +19,5 @@ collections:
             widget: "list"
             fields:
               - {label: "Título", name: "title", widget: "string"}
-              - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "estruturas", "pergolados"]}
+              - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "pergolados", "estruturas"]}
               - {label: "Imagem", name: "image", widget: "image"}

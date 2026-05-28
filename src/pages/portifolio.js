@@ -11,6 +11,7 @@ export default function Portifolio() {
     const [filtro, setFiltro] = useState('todos');
     const [showWpp, setShowWpp] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [fotosPortifolio, setFotosPortifolio] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -30,19 +31,18 @@ export default function Portifolio() {
 
     // --- EFEITOS ---
     
-    // Efeito para carregar os dados do JSON
+    // Efeito para carregar os dados do JSON (deve estar na pasta /public)
     useEffect(() => {
         fetch('/portfolio-data.json')
             .then(res => res.json())
             .then(data => {
-                console.log("Dados recebidos:", data);
-                // Acessa o array 'projetos' definido no JSON
+                // Acessa o array 'projetos' conforme estruturado no JSON
                 setFotosPortifolio(data.projetos || []);
             })
             .catch(err => console.error("Erro ao carregar JSON:", err));
     }, []);
 
-    // Efeito para monitorar o scroll e mostrar botão de WhatsApp
+    // Efeito para monitorar o scroll e efeito de header/whatsapp
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -52,7 +52,7 @@ export default function Portifolio() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Lógica de filtro: filtra as fotos baseadas na categoria selecionada
+    // Lógica de filtro: filtra as fotos baseadas na categoria
     const fotosFiltradas = filtro === 'todos' 
         ? fotosPortifolio 
         : fotosPortifolio.filter(item => item.categoria === filtro);
@@ -186,23 +186,36 @@ export default function Portifolio() {
                     <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 mb-6"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {fotosFiltradas.length > 0 ? (
-                        fotosFiltradas.map((foto) => (
-                            <div key={foto.id} className="relative aspect-square overflow-hidden rounded-xl group">
-                                <Image
-                                    src={foto.image}
-                                    alt={foto.title}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                            </div>
-                        ))
-                    ) : (
-                        <p className="text-white text-center col-span-3">Nenhum projeto encontrado nesta categoria.</p>
-                    )}
-                </div>
+                <section className="container mx-auto px-6 py-12">
+                    {/* Botões de Filtro */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        {categorias.map((cat) => (
+                            <button key={cat.id} onClick={() => setFiltro(cat.id)}
+                                className={`px-6 py-2 rounded-full font-bold uppercase text-xs transition-all ${filtro === cat.id ? 'bg-blue-600 text-white' : 'bg-zinc-800 text-zinc-400'}`}>
+                                {cat.nome}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Grid de Fotos Corrigido */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {fotosFiltradas.length > 0 ? (
+                            fotosFiltradas.map((foto, index) => (
+                                <div key={index} className="relative aspect-square overflow-hidden rounded-xl group">
+                                    <Image
+                                        src={foto.image} // Nome correto do campo no JSON
+                                        alt={foto.title} // Nome correto do campo no JSON
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                </div>
+                            ))
+                        ) : (
+                            <p className="text-center col-span-3">Nenhum projeto encontrado nesta categoria.</p>
+                        )}
+                    </div>
+                </section>
             </main>
 
             {/* FOOTER */}
