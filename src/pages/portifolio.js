@@ -43,17 +43,14 @@ export default function Portifolio() {
     const [fotosPortifolio, setFotosPortifolio] = useState([]);
 
     useEffect(() => {
-        async function carregarFotos() {
-            try {
-                const response = await fetch('/portfolio-data.json');
-                const data = await response.json();
-                setFotosPortifolio(data.projetos || []);
-            } catch (error) {
-                console.error("Erro ao carregar fotos do portfólio:", error);
-            }
-        }
-        carregarFotos();
-    }, []);
+        fetch('/portfolio-data.json')
+          .then(res => res.json())
+          .then(data => {
+            console.log("Dados recebidos:", data);
+            setFotosPortifolio(data.projetos || []);
+          })
+          .catch(err => console.error("Erro ao carregar JSON:", err));
+      }, []);
 
     const fotosFiltradas = filtro === 'todos'
         ? fotosPortifolio
