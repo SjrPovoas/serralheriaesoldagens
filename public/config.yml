@@ -4,7 +4,7 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
-galeria:
+collections:
   - name: "portfolio"
     label: "Portfólio Serralheria e Soldagens"
     files:
