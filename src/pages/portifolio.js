@@ -6,17 +6,15 @@ import Link from 'next/link';
 
 export default function Portifolio() {
     const router = useRouter();
-    const [filtro, setFiltro] = useState('todos');
-    const [showModal, setShowModal] = useState(false);
-
+    
     // --- ESTADOS ---
+    const [filtro, setFiltro] = useState('todos');
     const [showWpp, setShowWpp] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // ESTADOS DO MODAL DE ORÇAMENTO
+    const [fotosPortifolio, setFotosPortifolio] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    
+    // Estado para os dados do formulário de orçamento
     const [dados, setDados] = useState({
         nome: '', telefone: '', endereco: '',
         tipo: 'Personalizado', servico: 'Portão', local: ''
@@ -30,57 +28,47 @@ export default function Portifolio() {
         { id: 'estruturas', nome: 'Estruturas/Mezaninos' }
     ];
 
-    // --- EFEITOS E HANDLERS ---
+    // --- EFEITOS ---
+    
+    // Efeito para carregar os dados do JSON
+    useEffect(() => {
+        fetch('/portfolio-data.json')
+            .then(res => res.json())
+            .then(data => {
+                console.log("Dados recebidos:", data);
+                // Acessa o array 'projetos' definido no JSON
+                setFotosPortifolio(data.projetos || []);
+            })
+            .catch(err => console.error("Erro ao carregar JSON:", err));
+    }, []);
+
+    // Efeito para monitorar o scroll e mostrar botão de WhatsApp
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
-            setShowWpp(window.scrollY > 400);
+            setShowWpp(window.scrollY > 300);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    
-
-    const [fotosPortifolio, setFotosPortifolio] = useState([]);
-
-    useEffect(() => {
-        fetch('/portfolio-data.json')
-          .then(res => res.json())
-          .then(data => {
-            console.log("Dados recebidos:", data);
-            setFotosPortifolio(data.projetos || []);
-          })
-          .catch(err => console.error("Erro ao carregar JSON:", err));
-      }, []);
-
-      {fotosPortifolio && fotosPortifolio.map((item, index) => (
-        <div key={index}>
-          <img src={item.image} alt={item.title} />
-          <h3>{item.title}</h3>
-        </div>
-      ))}
-
-    const handleScroll = () => {
-        const scrolled = window.scrollY > 50;
-        setIsScrolled(scrolled);
-        setShowWpp(window.scrollY > 300); // Aparece após rolar 300px
-    };
+    // Lógica de filtro: filtra as fotos baseadas na categoria selecionada
+    const fotosFiltradas = filtro === 'todos' 
+        ? fotosPortifolio 
+        : fotosPortifolio.filter(item => item.categoria === filtro);
 
     const enviarWhatsApp = (e) => {
         e.preventDefault();
         const fone = "5561993294211";
         const texto = `Olá! Gostaria de um orçamento para a *Serralheria e Soldagens*.
-    
-    *MEUS DADOS:*
-    • Nome: ${dados.nome}
-    • Telefone: ${dados.telefone}
-    • Endereço: ${dados.endereco}
-    
-    *DETALHES DO SERVIÇO:*
-    • Tipo: ${dados.tipo}
-    • Serviço: ${dados.servico}
-    • Local da Execução: ${dados.local}`;
+        *MEUS DADOS:*
+        • Nome: ${dados.nome}
+        • Telefone: ${dados.telefone}
+        • Endereço: ${dados.endereco}
+        *DETALHES DO SERVIÇO:*
+        • Tipo: ${dados.tipo}
+        • Serviço: ${dados.servico}
+        • Local: ${dados.local}`;
 
         window.open(`https://wa.me/${fone}?text=${encodeURIComponent(texto)}`, '_blank');
         setIsModalOpen(false);
@@ -191,36 +179,30 @@ export default function Portifolio() {
                 )}
             </header>
 
-            {/* CONTEÚDO PRINCIPAL (Ajustado com padding-top para não ficar sob o header fixo) */}
+            {/* CONTEÚDO PRINCIPAL */}
             <main className="flex-grow pt-32 pb-20">
                 <div className="text-center mb-10">
                     <h1 className="text-5xl font-bold italic uppercase tracking-tighter text-white drop-shadow-sm">Portifólio</h1>
                     <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 mb-6"></div>
                 </div>
 
-                <section className="container mx-auto px-6 py-12">
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        {categorias.map((cat) => (
-                            <button key={cat.id} onClick={() => setFiltro(cat.id)}
-                                className={`px-6 py-2 rounded-full font-bold uppercase text-xs transition-all
-                                    ${filtro === cat.id ? 'bg-blue-primary text-white shadow-blue-glow' : 'bg-industrial-gray text-zinc-400 border border-zinc-700'}`}
-                            > {cat.nome}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {fotosFiltradas.map((foto) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {fotosFiltradas.length > 0 ? (
+                        fotosFiltradas.map((foto) => (
                             <div key={foto.id} className="relative aspect-square overflow-hidden rounded-xl group">
-                                <Image src={foto.src} alt={foto.alt} fill
-                                    // Define que em celulares ocupa 100% da largura, em tablets 50% e em telas grandes 33%
+                                <Image
+                                    src={foto.image}
+                                    alt={foto.title}
+                                    fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
-                        ))}
-                    </div>
-                </section>
+                        ))
+                    ) : (
+                        <p className="text-white text-center col-span-3">Nenhum projeto encontrado nesta categoria.</p>
+                    )}
+                </div>
             </main>
 
             {/* FOOTER */}
