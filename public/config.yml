@@ -13,7 +13,7 @@ todos:
         name: "portfolio"
         fields:
           - label: "Serviços"
-            name: "servicos"
+            name: "projetos"
             widget: "list"
             fields:
               - {label: "Título", name: "title", widget: "string"}
