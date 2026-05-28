@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: SjrPovoas/serralheriaesoldagens
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "portfolio"
+    label: "Portfólio"
+    file: "portfolio-data.json"
+    fields:
+      - label: "Projetos"
+        name: "projetos"
+        widget: "list"
+        fields:
+          - {label: "Título", name: "title", widget: "string"}
+          - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "estruturas", "pergolados"]}
+          - {label: "Imagem", name: "image", widget: "image"}

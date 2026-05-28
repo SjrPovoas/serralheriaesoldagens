@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel do Silvano</title>
-  </head>
-  <body>
-     <!--PAINEL ADM: http://localhost:3000/admin -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Silvano</title>
+</head>
+
+<body>
+  <!--PAINEL ADM: http://localhost:3000/admin -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({ config: { local_backend: true } }); // Apenas para teste local, se necessário
+  </script>
+</body>
+
 </html>
