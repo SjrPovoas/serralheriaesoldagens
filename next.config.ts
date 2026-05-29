@@ -1,24 +1,19 @@
-import type { NextConfig } from "next";
-
-// Definimos uma variável 'config' como 'any' para evitar que 
-// o TypeScript verifique propriedades que ele não conhece.
+/** @type {import('next').NextConfig} */
 const nextConfig: any = {
   reactStrictMode: true,
+  // Desativa a minificação CSS/JS pesada que causa o estouro de memória
+  swcMinify: false,
   
-  // Otimizações de build
   webpack: (config: any) => {
-    config.resolve.alias['lightningcss'] = false;
+    // Força o webpack a não minimizar, economizando muita RAM
     config.optimization.minimize = false;
     return config;
   },
 
-  // Configurações que costumam dar erro de tipo:
-  // Usamos o espalhamento para injetar essas opções ignorando a tipagem estrita
-  ...{
-    swcMinify: false,
-    experimental: {
-      turbo: {},
-    },
+  // Desativa completamente qualquer coisa relacionada ao Turbopack
+  // Isso silencia o erro de "This build is using Turbopack"
+  experimental: {
+    turbo: undefined,
   },
 
   async rewrites() {
