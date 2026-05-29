@@ -2,24 +2,24 @@ backend:
   name: github
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
+  base_url: https://api.github.com
   auth_type: implicit
-  client_id: 0v23liFqMrisc0vP3FQe
 
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "portfolio"
-    label: "Portfólio Serralheria e Soldagens"
-    files:
-      - file: "portfolio-data.json"
-        label: "Todos os Projetos"
-        name: "portfolio"
-        fields:
-          - label: "Foto do Serviço"
-            name: "servicos"
-            widget: "list"
-            fields:
-              - {label: "Título da Imagem", name: "title", widget: "string"}
-              - {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "pergolados", "estruturas"]}
-              - {label: "Imagem", name: "image", widget: "image"}
+  name: "portfolio"
+  label: "Portfólio Serralheria e Soldagens"
+  files:
+      file: "portfolio-data.json"
+      label: "Todos os Projetos"
+      name: "portfolio"
+      fields:
+          label: "Foto do Serviço"
+          name: "servicos"
+          widget: "list"
+          fields:
+              {label: "Título da Imagem", name: "title", widget: "string"}
+              {label: "Categoria", name: "categoria", widget: "select", options: ["portoes", "grades", "pergolados", "estruturas"]}
+              {label: "Imagem", name: "image", widget: "image"}
