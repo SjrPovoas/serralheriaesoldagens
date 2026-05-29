@@ -2,13 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'lightningcss': false,
-    };
-    return config;
-  },
+  // Apenas a reescrita para o CMS funcionar
   async rewrites() {
     return [
       {
