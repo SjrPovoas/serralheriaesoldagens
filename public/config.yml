@@ -1,5 +1,9 @@
 backend:
-  name: test-repo
+name: github
+  repo: SjrPovoas/serralheriaesoldagens
+  branch: main
+  auth_type: implicit
+  client_id: 0v23liFqMrisc0vP3FQe
 
 media_folder: "public/images"
 public_folder: "/images"
