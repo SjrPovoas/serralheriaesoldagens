@@ -88,13 +88,19 @@ git checkout -b feature/admin
 ```
 git push -u origin feature/admin
 ```
-8. Crie o Pull Request:
+8. Crie o Pull Request: 
+<br>
 8.1. Vá até o seu repositório no GitHub.
+<br>
 8.2. Você verá uma barra amarela ou um botão escrito "Compare & pull request". Clique nele.
+<br>
 8.3. Clique em "Create pull request"
+<br>
 8.4. Como você é o dono do repositório, verá um botão verde escrito "Merge pull request". Clique nele para confirmar a junção das mudanças com a main.
+<br>
 8.5 Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a main agora está atualizada:
-8.5.1. Volta para a main
+<br>
+8.5.1. Volta para a branch: main
 ```
 git checkout main
 ```

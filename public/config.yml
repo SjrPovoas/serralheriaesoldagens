@@ -1,5 +1,5 @@
 backend:
-name: github
+  name: github
   repo: SjrPovoas/serralheriaesoldagens
   branch: main
   auth_type: implicit
