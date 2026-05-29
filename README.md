@@ -80,27 +80,27 @@ EX: git remote add https://github.com/SjrPovoas/serralheriaesoldagens.git
 ```
   git push -u origin main
 ```
-
-Esses são apenas alguns dos comandos mais comuns do **Git** que você pode usar na linha de comando.
+6. Cria uma nova branch chamada 'feature/admin'
 ```
-npx create-next-app@latest serralheriaesoldagens
+git checkout -b feature/admin
 ```
+7. Agora empurra essa branch para o GitHub
 ```
-npm install -D tailwindcss postcss autoprefixer
+git push -u origin feature/admin
 ```
+8. Crie o Pull Request:
+8.1. Vá até o seu repositório no GitHub.
+8.2. Você verá uma barra amarela ou um botão escrito "Compare & pull request". Clique nele.
+8.3. Clique em "Create pull request"
+8.4. Como você é o dono do repositório, verá um botão verde escrito "Merge pull request". Clique nele para confirmar a junção das mudanças com a main.
+8.5 Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a main agora está atualizada:
+8.5.1. Volta para a main
 ```
-npx tailwindcss init -p
+git checkout main
 ```
+8.5.2. Baixa as novidades que acabamos de fazer o merge
 ```
-npm install @tailwindcss/postcss
-```
-```
-npx next dev
-npm rebuild
-npm run dev
-```
-```
-npm install bootstrap-icons
+git pull origin main
 ```
 
 ---
@@ -302,7 +302,7 @@ O cliente acessa o painel do Decap (pelo celular), faz o upload da foto e preenc
 <li>A mágica:</li>
 O CMS envia uma ordem para a Vercel reconstruir o site automaticamente.
 <li>Vantagem:</li>
-O Silvano não precisa tocar em código, nem em JSON, nem em GitHub. Ele só precisa "preencher formulários", com botões de "Adicionar Nova Foto", "Enviar Arquivo", com fotos. É a forma mais segura e à prova de erros para quem não é programador. Tudo é salvo direto no seu repositório atual.
+O cliente não precisa tocar em código, nem em JSON, nem em GitHub. Ele só precisa "preencher formulários", com botões de "Adicionar Nova Foto", "Enviar Arquivo", com fotos. É a forma mais segura e à prova de erros para quem não é programador. Tudo é salvo direto no seu repositório atual.
 </lu>
 </details>
 
@@ -318,7 +318,7 @@ Silvano Ribeiro | Empresário | X | X | X | [@serralheriaesoldagens](https://www
 
 
 ***
-Última atualização: 15/05/2026 - 19:43
+Última atualização: 29/05/2026 - 17:43
 <p align="center">
   &COPY; 2026 Serralheria e Soldagens
 </p>
