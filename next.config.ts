@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Apenas a reescrita para o CMS funcionar
+
+  // Mantemos a reescrita necessária para o CMS
   async rewrites() {
     return [
       {
@@ -10,6 +11,19 @@ const nextConfig: NextConfig = {
         destination: '/admin/index.html',
       },
     ];
+  },
+
+  // Otimização para evitar erros de memória no build (Vercel/Netlify)
+  webpack: (config) => {
+    config.optimization.minimize = false;
+    return config;
+  },
+
+  // Configuração experimental segura para Next.js 16
+  experimental: {
+    // Em versões recentes, workerThreads não é mais uma chave direta aqui,
+    // por isso focamos em reduzir a carga de processamento
+    optimizePackageImports: ['lucide-react', 'bootstrap'],
   },
 };
 
