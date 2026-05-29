@@ -2,10 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Desabilitamos o turbopack explicitamente como sugerido pelo erro
-  // e removemos configurações experimentais conflitantes
-  turbopack: {}, 
-
+  webpack: (config) => {
+    // Isso ignora o lightningcss que está a causar o erro de "Cannot find module"
+    config.resolve.alias['lightningcss'] = false;
+    config.optimization.minimize = false;
+    return config;
+  },
   async rewrites() {
     return [
       {
