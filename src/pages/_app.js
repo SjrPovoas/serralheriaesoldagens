@@ -1,4 +1,6 @@
-import '../styles/globals.css'; // O caminho deve ser EXATAMENTE onde o arquivo está
+//src/pages/_app.js
+
+import '../styles/globals.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function App({ Component, pageProps }) {

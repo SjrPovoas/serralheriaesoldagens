@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Esta configuração garante que o Next.js não "roube" a rota /admin
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'lightningcss': false,
+    };
+    return config;
+  },
   async rewrites() {
     return [
       {
