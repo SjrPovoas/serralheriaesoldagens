@@ -104,9 +104,37 @@ git push -u origin feature/admin
 ```
 git checkout main
 ```
+<br>
 8.5.2. Baixa as novidades que acabamos de fazer o merge
 ```
 git pull origin main
+```
+<br>
+```
+npx next dev
+npm rebuild
+npm run dev
+```
+
+### 3. Comandos utilizados para instalar Dependências e correções
+
+```
+npx create-next-app@latest serralheriaesoldagens
+```
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+```
+npx tailwindcss init -p
+```
+```
+npm install @tailwindcss/postcss
+```
+```
+npm install bootstrap-icons
+```
+```
+npm install lightningcss
 ```
 
 ---
