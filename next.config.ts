@@ -1,21 +1,32 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
+
+// Forçamos o tipo para 'any' para ignorar restrições severas do compilador
+// durante o processo de build em ambientes restritos (como a Vercel)
 const nextConfig: any = {
   reactStrictMode: true,
-  // Desativa a minificação CSS/JS pesada que causa o estouro de memória
+  
+  // Desativa a minificação para evitar erro de memória (OOM - Out of Memory)
   swcMinify: false,
   
   webpack: (config: any) => {
-    // Força o webpack a não minimizar, economizando muita RAM
+    // Garante que o webpack não tente otimizações agressivas de CSS/JS
     config.optimization.minimize = false;
+    
+    // Alias para evitar que bibliotecas nativas de compilação CSS tentem rodar
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'lightningcss': false,
+    };
+    
     return config;
   },
 
-  // Desativa completamente qualquer coisa relacionada ao Turbopack
-  // Isso silencia o erro de "This build is using Turbopack"
+  // Desativa o Turbopack explicitamente
   experimental: {
     turbo: undefined,
   },
 
+  // Rotas para o Decap CMS
   async rewrites() {
     return [
       {

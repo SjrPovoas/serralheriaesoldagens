@@ -90,9 +90,17 @@ git push -u origin feature/admin
 ```
 8. Crie o Pull Request: 
 <br>
-8.1. Vá até o seu repositório no GitHub. Lá você verá uma barra amarela ou um botão escrito "Compare & pull request". Clique nele e depois clique em "Create pull request".
+Vá até o seu repositório no GitHub.
 <br>
-Como você é o dono do repositório, verá um botão verde escrito "Merge pull request". Clique nele para confirmar a junção das mudanças com a main. Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que abranch: main agora está atualizada:
+Lá você verá uma barra amarela ou um botão escrito "Compare & pull request".
+<br>
+Clique nele e depois clique em "Create pull request".
+<br>
+Como você é o dono do repositório, verá um botão verde escrito "Merge pull request".
+<br>
+Clique nele para confirmar a junção das mudanças com a branch: main.
+<br>
+Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a branch: main agora está atualizada:
 <br>
 ```
 git checkout main
@@ -125,9 +133,6 @@ npm install @tailwindcss/postcss
 ```
 ```
 npm install bootstrap-icons
-```
-```
-npm install lightningcss
 ```
 ```
 npm install tailwindcss@latest postcss autoprefixer --save-dev
@@ -230,102 +235,14 @@ Após salvar as alterações no DNS, o próprio painel do ImprovMX vai mostrar u
 Acesse https://improvmx.com/ e utilize o email do gmail de preferência.
 </li>
 </ul>
-<ul>
-<li><b>Registros MX</b>
-<br>
-Prioridade | Host/Nome | Valor (Destino)
-<br>
-10 | @ | mx1.improvmx.com
-<br>
-20 | @ | mx2.improvmx.com
-</li>
-<li><b>Registro TXT (Configuração)</b>
-<br>
-Nome: @
-<br>
-Valor: forward-email=*@serralheriaesoldagens@gmail.com
-</li>
-<li><b>Registro TXT (SPF) para garantir que os e-mails não caiam no spam</b>
-<br>
-Nome: @
-<br>
-Valor: v=spf1 include:spf.improvmx.com ~all
-</li>
-<li><b>Configurações do Servidor SMTP (Google)</b>
-<br>
-Servidor SMTP:	smtp.gmail.com
-<br>
-Porta (SSL):	465
-<br>
-Porta (TLS/STARTTLS):	587 (Recomendada para Next.js/Node.js)
-<br>
-Requer Autenticação:	Sim
-<br>
-Usuário: serralheriaesoldagens@gmail.com
-<br>
-Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
-</li>
-</ul>
 </details>
 
-<details>
-<summary>FORWARD EMAIL (PLANO GRATUITO RECUSADO)</summary>
-<ul>
-<li><b>Serviço de encaminhamento (RELAY)</b>
-<br>
-Ele não possui uma caixa de entrada para fazer login e ler e-mails. Ele apenas recebe a mensagem enviada para o seu domínio e a "empurra" instantaneamente para outro endereço (como o seu Gmail Corporativo).
-<br>
-O foco principal é o recebimento. Para responder ou enviar e-mails usando o seu domínio através dele, você configura o SMTP de outro provedor ou usa os recursos de "Enviar como" do Gmail.
-<br>
-Oferece um plano gratuito generoso com aliases ilimitados.
-<br>
-Uso do Alias Global (Catch-all): Uma função muito comum aqui é o "catch-all". Você pode configurar um asterisco (*@seudominio.com). Assim, qualquer coisa que inventar antes do "@" (como teste@, suporte@, vendas@) será entregue na sua conta principal, sem você precisar criar um por um.
-<br>
-Criar conta gratuita em https://forwardemail.net/pt
-</li>
-</ul>
-<ul>
-<li><b>Registros MX</b>
-<br>
-Prioridade | Host/Nome | Valor (Destino)
-<br>
-10 | @ | mx1.forwardemail.net
-<br>
-10 | @ | mx2.forwardemail.net
-</li>
-<li><b>Registro TXT (Configuração)</b>
-<br>
-Nome: @
-<br>
-Valor: forward-email=*@serralheriaesoldagens@gmail.com
-</li>
-<li><b>Registro TXT (SPF) para garantir que os e-mails não caiam no spam</b>
-<br>
-Nome: @
-<br>
-Valor: v=spf1 include:_spf.forwardemail.net -all
-</li>
-<li><b>Configurações do Servidor SMTP (Google)</b>
-<br>
-Servidor SMTP:	smtp.gmail.com
-<br>
-Porta (SSL):	465
-<br>
-Porta (TLS/STARTTLS):	587 (Recomendada para Next.js/Node.js)
-<br>
-Requer Autenticação:	Sim
-<br>
-Usuário: serralheriaesoldagens@gmail.com
-<br>
-Senha: Senha de App de 16 dígitos (não é a senha da conta gmail)
-</li>
-</ul>
-</details>
+---
+## 7. PAINEL ADMIN
 
 <details>
-<summary>PAINEL ADMIN (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
-
- - [Painel Admin - Decap CMS (Content Management System) serviço gratuito](serralheriaesoldagens.netlify.app)
+<summary>PAINEL ADMIN RECUSADO (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
+ - Painel Admin - Decap CMS (Content Management System) serviço gratuito
 <ul>
 <li>Como funciona:</li>
 O cliente acessa o painel do Decap (pelo celular), faz o upload da foto e preenche os campos (Categoria, Título) e esse painel, ele administrativo cria automaticamente um novo commit no seu GitHub e atualiza o "portfolio-data.json" para você.
@@ -339,7 +256,7 @@ O cliente não precisa tocar em código, nem em JSON, nem em GitHub. Ele só pre
 <p>
 
 ---
-## 7. CONHEÇA O TIME
+## 8. CONHEÇA O TIME
 
 Nome | Título | Linkedin | X/Twitter | GitHub | Instagram
 ---|---|---|---|---|---
