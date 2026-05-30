@@ -40,7 +40,7 @@ export default function UploadPage() {
             </button>
           </div>
         </header>
-        <h1 className="mb-6 text-2xl font-bold">Acesso Restrito</h1>
+        <h1 className="mb-6 text-2xl font-bold">Acesso Restrito ao Painel Upload</h1>
         <input
           type="password"
           className="p-3 rounded bg-gray-900 border border-blue-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"

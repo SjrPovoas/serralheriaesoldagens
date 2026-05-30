@@ -13,22 +13,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'SEU_EMAIL@gmail.com',
-      pass: 'SUA_SENHA_DE_APP_AQUI', 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: '"Painel Admin" <SEU_EMAIL@gmail.com>',
+      from: '"Painel Admin" <painelupload@serralheriaesoldagens.com.br>',
       to: 'SEU_EMAIL@gmail.com', // O e-mail que vai receber
       subject: `Novo Upload: ${title}`,
       text: `Dados do novo projeto:
-             Título: ${title}
+             Título da Imagem: ${title}
              Categoria: ${categoria}
              Nome do Arquivo: ${imageName}`,
-      html: `<h1>Novo Projeto Cadastrado</h1>
-             <p><b>Título:</b> ${title}</p>
+      html: `<h1>Nova Imagem Cadastrada</h1>
+             <p><b>Título da Imagem:</b> ${title}</p>
              <p><b>Categoria:</b> ${categoria}</p>
              <p><b>Arquivo:</b> ${imageName}</p>`,
     });
