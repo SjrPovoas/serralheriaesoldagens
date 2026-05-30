@@ -121,7 +121,7 @@ export default function UploadPage() {
             </div>
 
             <button type="submit" className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition-all">
-              Enviar para meu E-mail
+              Enviar fotos
             </button>
           </form>
         </div>
