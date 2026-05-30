@@ -137,6 +137,12 @@ npm install bootstrap-icons
 ```
 npm install tailwindcss@latest postcss autoprefixer --save-dev
 ```
+```
+npm install nodemailer
+```
+```
+npm install @types/nodemailer --save-dev
+```
 
 ---
 ## 2. TECNOLOGIAS USADAS
