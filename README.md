@@ -252,7 +252,7 @@ Acesse https://improvmx.com/ e utilize o email do gmail de preferência.
 ## 7. PAINEL DE UPLOAD
 
 <details>
-<summary>PAINEL DE UPLOAD (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
+<summary>CLOUDINARY</summary>
 
  - [Cloudinary](https://cloudinary.com/)
 
@@ -261,7 +261,7 @@ Acesse https://improvmx.com/ e utilize o email do gmail de preferência.
 Serviço gratuito. O Cloudinary é uma plataforma em nuvem para gerenciamento de mídia. Ele permite que desenvolvedores e criadores façam upload, armazenamento, otimização e entrega de imagens e vídeos. A ferramenta processa arquivos automaticamente para que carreguem rápido em qualquer dispositivo ou tamanho de tela.
 </lu>
 
- - [Painel de Upload](https://serralheriaesoldagens.com.br/admin/)
+ - [Painel de Upload da Serralheria e Soldagens](https://serralheriaesoldagens.com.br/admin/)
 
 </details>
 
