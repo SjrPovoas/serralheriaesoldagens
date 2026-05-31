@@ -102,6 +102,7 @@ Clique nele para confirmar a junção das mudanças com a branch: main.
 <br>
 Depois de clicar no "Merge" lá no site do GitHub, volte ao seu terminal e diga para o seu computador que a branch: main agora está atualizada:
 <br>
+
 ```
 git checkout main
 ```
@@ -110,6 +111,7 @@ git checkout main
 ```
 git pull origin main
 ```
+
 10. Importantes comandos para criar ou rodar o projeto:
 ```
 npx next dev

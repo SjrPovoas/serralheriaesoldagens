@@ -118,7 +118,7 @@ export default function UploadPage() {
             <button onClick={handleLogin} className="w-full py-3 bg-blue-600 rounded font-bold">Logar Painel</button>
           </div>
         </main>
-        
+
         {/* FOOTER */}
         <footer className="py-12 bg-black text-silver-text border-t border-zinc-800">
           <div className="container mx-auto px-6 text-center text-[10px] uppercase tracking-widest opacity-90">
@@ -133,6 +133,10 @@ export default function UploadPage() {
   // --- TELA AUTENTICADA COM CLOUDINARY ---
   return (
     <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white p-8">
+      <Head>          
+        <title>Logado no Painel de Upload da Serralheria e Soldagens</title>
+      </Head>
+
       {/* HEADER */}
       <header className={`fixed top-0 w-full z-[1000] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 border-b border-blue-500/30' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
