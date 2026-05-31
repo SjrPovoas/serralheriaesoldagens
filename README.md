@@ -143,6 +143,9 @@ npm install nodemailer
 ```
 npm install @types/nodemailer --save-dev
 ```
+```
+npm install next-cloudinary
+```
 
 ---
 ## 2. TECNOLOGIAS USADAS
@@ -244,20 +247,22 @@ Acesse https://improvmx.com/ e utilize o email do gmail de preferência.
 </details>
 
 ---
-## 7. PAINEL ADMIN
+## 7. PAINEL DE UPLOAD
 
 <details>
-<summary>PAINEL ADMIN RECUSADO (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
- - Painel Admin - Decap CMS (Content Management System) serviço gratuito
+<summary>PAINEL DE UPLOAD (PARA O CLIENTE ENVIAR FOTOS DOS SERVIÇOS)</summary>
+
+ - [Cloudinary](https://cloudinary.com/)
+
 <ul>
 <li>Como funciona:</li>
-O cliente acessa o painel do Decap (pelo celular), faz o upload da foto e preenche os campos (Categoria, Título) e esse painel, ele administrativo cria automaticamente um novo commit no seu GitHub e atualiza o "portfolio-data.json" para você.
-<li>A mágica:</li>
-O CMS envia uma ordem para a Vercel reconstruir o site automaticamente.
-<li>Vantagem:</li>
-O cliente não precisa tocar em código, nem em JSON, nem em GitHub. Ele só precisa "preencher formulários", com botões de "Adicionar Nova Foto", "Enviar Arquivo", com fotos. É a forma mais segura e à prova de erros para quem não é programador. Tudo é salvo direto no seu repositório atual.
+Serviço gratuito. O Cloudinary é uma plataforma em nuvem para gerenciamento de mídia. Ele permite que desenvolvedores e criadores façam upload, armazenamento, otimização e entrega de imagens e vídeos. A ferramenta processa arquivos automaticamente para que carreguem rápido em qualquer dispositivo ou tamanho de tela.
 </lu>
+
+ - [Painel de Upload](https://serralheriaesoldagens.com.br/admin/)
+
 </details>
+
 
 <p>
 
@@ -271,7 +276,7 @@ Silvano Ribeiro | Empresário | X | X | X | [@serralheriaesoldagens](https://www
 
 
 ***
-Última atualização: 29/05/2026 - 17:43
+Última atualização: 31/05/2026 - 17:43
 <p align="center">
   &COPY; 2026 Serralheria e Soldagens
 </p>
