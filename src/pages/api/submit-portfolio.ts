@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     id: Date.now(),
     title: title,
     categoria: categoria,
-    image: `/images/${imageName}`
+    image: `/assets/images/${imageName}`
   };
 
   // 2. Configura o envio de e-mail (Exemplo com Gmail)

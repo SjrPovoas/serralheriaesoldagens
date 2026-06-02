@@ -4,25 +4,25 @@
         "id": "1",
         "title": "Portão Basculante Moderno",
         "categoria": "portoes",
-        "image": "/images/portao-eletronico.jpg"
+        "image": "/assets/images/portao-eletronico.jpg"
       },
       {
         "id": "2",
         "title": "Grade de Proteção Residencial",
         "categoria": "grades",
-        "image": "/images/grades.jpg"
+        "image": "/assets/images/grades.jpg"
       },
       {
         "id": "3",
         "title": "Estrutura Metálica para Mezanino",
         "categoria": "estruturas",
-        "image": "/images/mezanino-metalico.jpg"
+        "image": "/assets/images/mezanino-metalico.jpg"
       },
       { 
         "id": 4,
         "title": "Pergolado",
         "categoria": "pergolados", 
-        "image": "/images/pergolado.jpg"
+        "image": "/assets/images/pergolado.jpg"
       }
     ]
   }

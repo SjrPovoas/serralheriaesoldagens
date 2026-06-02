@@ -81,9 +81,6 @@ export default function UploadPage() {
           <meta property="og:title" content="Painel de Upload da Serralheria e Soldagens" />
           <meta property="og:description" content="Painel de Upload da Serralheria e Soldagens" />
           {/* FONTES E ESTILOS EXTERNOS */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
           <link rel="canonical" href="https://serralheriaesoldagens.com.br/admin" />
           <link rel="profile" href="https://gmpg.org/xfn/11" />
 
@@ -102,7 +99,7 @@ export default function UploadPage() {
 
         <main className="flex-grow pt-32 p-8 flex items-center justify-center">
           <div className="max-w-md w-full bg-gray-900 p-8 rounded-lg text-center border border-gray-800 shadow-xl space-y-6">
-            <h1 className="text-xl font-bold text-blue-500">Acesso Restrito</h1>
+            <h1 className="text-xl font-bold text-blue-500">Acesso Restrito <i className="bi bi-key-fill text-[1.6rem] text-blue-primary"></i></h1>
             <div className="relative w-full">
               <input
                 type={showPassword ? "text" : "password"}
@@ -132,78 +129,108 @@ export default function UploadPage() {
 
   // --- TELA AUTENTICADA COM CLOUDINARY ---
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white p-8">
-      <Head>          
-        <title>Logado no Painel de Upload da Serralheria e Soldagens</title>
+    <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
+      <Head>
+        <title>Logado no Painel de Upload</title>
       </Head>
 
       {/* HEADER */}
-      <header className={`fixed top-0 w-full z-[1000] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 border-b border-blue-500/30' : 'bg-transparent py-6'}`}>
+      <header className={`fixed top-0 w-full z-[1000] bg-black/90 backdrop-blur-md py-4 border-b border-blue-500/30`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link href="/" className="relative flex items-center gap-4">
-            <div className="relative w-12 h-12 md:w-16 md:h-16"><Image src="/logo2-serralheriaesoldagens.png" alt="Logo" fill className="object-contain" /></div>
-            <div className="hidden lg:block relative w-64 h-12"><Image src="/logo3-serralheriaesoldagens.png" alt="Serralheria e Soldagens" fill priority className="object-contain" /></div>
+            <div className="relative w-10 h-10"><Image src="/logo2-serralheriaesoldagens.png" alt="Logo" fill className="object-contain" /></div>
           </Link>
-        </div>
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="text-blue-500 font-bold">Painel de Upload</div>
-          <button onClick={handleLogout} className="flex bg-red-900 px-4 py-2 rounded text-xs uppercase gap-4">Deslogar</button>
+          <div className="text-blue-500 font-bold text-sm">Painel Administrativo</div>
+          <button onClick={handleLogout} className="bg-red-900 px-4 py-2 rounded text-xs uppercase">Deslogar</button>
         </div>
       </header>
 
-      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 bg-gray-900 px-8 py-25 rounded border border-gray-800">
-        <CldUploadWidget
-          uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
-          onSuccess={(result: any) => {
-            setFormData({
-              ...formData,
-              imageUrl: result.info.secure_url,
-              imageName: result.info.original_filename
-            });
-            alert('Foto processada!');
-          }}
-        >
-          {({ open }) => (
-            <button type="button" onClick={() => open()} className="p-3 bg-green-600 w-full rounded font-bold">
-              1. Clique e selecione sua Foto
-            </button>
-          )}
-        </CldUploadWidget>
+      <main className="pt-32 p-8 max-w-2xl mx-auto w-full">
 
-        {formData.imageUrl && <p className="text-green-500 text-sm">Foto carregada: {formData.imageName}</p>}
+        {/* SEÇÃO VISUALIZAR */}
+        <section className="mb-10 p-6 bg-gray-900 rounded border border-gray-800">
+          <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Visualizar Documentos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link href="/assets/docs/cartao-visitas.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
+              <i className="bi bi-person-vcard-fill text-[1.4rem] text-blue-primary">.</i>
+              Cartão de Visitas em pdf
+              <i className="bi bi-arrow-right-short seta-icon text-[1rem]"></i>
+            </Link>
+            <Link href="https://www.canva.com/design/DAHJmKe2iS8/Z8DMBXB98gs9nCQqMknfkg/edit" target='_blank' className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
+              <i className="bi bi-person-vcard-fill text-[1.4rem] text-blue-primary">.</i>
+              Link do Projeto no canva
+              <i className="bi bi-arrow-up-right text-[1rem]"></i>
+            </Link>
+            <Link href="/assets/docs/uniforme.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
+              <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
+              Uniforme em pdf
+              <i className="bi bi-arrow-right-short seta-icon text-[1rem]"></i>
+            </Link>
+            <Link href="https://www.canva.com/design/DAHJmcml0Qk/U38o8aou9zAnytxlzeVn_Q/edit" target='_blank' className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
+            <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
+              Link do Projeto no canva
+              <i className="bi bi-arrow-up-right text-[1rem]"></i>
+            </Link>
+          </div>
+        </section>
 
-        <select className="w-full p-3 bg-black border border-gray-700" onChange={e => setFormData({ ...formData, categoria: e.target.value })}>
-          <option value="">Selecione Categoria</option>
-          <option value="grades">Grades</option>
-          <option value="pergolados">Pergolados</option>
-          <option value="estruturas">Estruturas</option>
-          <option value="portoes">Portões</option>
-        </select>
+        {/* SEÇÃO FORMULÁRIO DE UPLOAD */}
+        <form onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-8 rounded border border-gray-800">
+          <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Painel de Upload</h2>
+          <h3 className="font-bold text-center mb-4">Adicionar Nova Imagem <i className="bi bi-image-fill text-[1.4rem] text-white-800"></i></h3>
 
-        <input required
-          placeholder="EX: nome_da_foto_letras_minusculas.png"
-          className="w-full p-3 bg-black border border-gray-700"
-          value={formData.title}
-          onChange={e => setFormData({ ...formData, title: e.target.value })}
-        />
+          <CldUploadWidget
+            uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
+            onSuccess={(result: any) => {
+              setFormData({
+                ...formData,
+                imageUrl: result.info.secure_url,
+                imageName: result.info.original_filename
+              });
+              alert('Foto processada!');
+            }}
+          >
+            {({ open }) => (
+              <button type="button" onClick={() => open()} className="p-3 bg-green-600 w-full rounded font-bold hover:bg-green-700 transition">
+                1. Selecionar Foto
+              </button>
+            )}
+          </CldUploadWidget>
 
-        {/* BOTÃO COM ESTADO DE CARREGAMENTO */}
-        <button
-          type="submit"
-          disabled={isUploading}
-          className={`w-full p-3 rounded font-bold transition-all ${isUploading ? 'bg-gray-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
-        >
-          {isUploading ? "ENVIANDO AGUARDE..." : "2. Clique para Enviar os dados"}
-        </button>
-      </form>
+          {formData.imageUrl && <p className="text-green-500 text-sm break-all">✅ {formData.imageName}</p>}
 
-      {/* FOOTER */}
-      <footer className="py-12 bg-black text-silver-text border-t border-zinc-800">
-        <div className="container mx-auto px-6 text-center text-[10px] uppercase tracking-widest opacity-90">
-          <p>© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
-          <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary font-bold mt-2 block">Desenvolvido por SjrPovoaS</a>
-        </div>
-      </footer>
+          <select required className="w-full p-3 bg-black border border-gray-700 rounded" onChange={e => setFormData({ ...formData, categoria: e.target.value })}>
+            <option value="">Selecione Categoria</option>
+            <option value="grades">Grades</option>
+            <option value="pergolados">Pergolados</option>
+            <option value="estruturas">Estruturas</option>
+            <option value="portoes">Portões</option>
+          </select>
+
+          <input required
+            placeholder="Título (Ex: nome_do_projeto.png)"
+            className="w-full p-3 bg-black border border-gray-700 rounded"
+            value={formData.title}
+            onChange={e => setFormData({ ...formData, title: e.target.value })}
+          />
+
+          <button
+            type="submit"
+            disabled={isUploading}
+            className={`w-full p-3 rounded font-bold transition-all ${isUploading ? 'bg-gray-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+          >
+            {isUploading ? "ENVIANDO AGUARDE..." : "2. Enviar dados"}
+          </button>
+        </form>
+      </main>
+
+              {/* FOOTER */}
+              <footer className="py-12 bg-black text-silver-text border-t border-zinc-800">
+          <div className="container mx-auto px-6 text-center text-[10px] uppercase tracking-widest opacity-90">
+            <p>© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
+            <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary font-bold mt-2 block">Desenvolvido por SjrPovoaS</a>
+          </div>
+        </footer>
     </div>
   );
 }

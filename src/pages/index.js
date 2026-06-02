@@ -20,17 +20,17 @@ export default function Home() {
     // --- DEFINIÇÕES DE DADOS ---
     const slides = [
         {
-            url: '/images/portao-eletronico.jpg',
+            url: '/assets/images/portao-eletronico.jpg',
             titulo: 'Serralheria de Precisão',
             subtitulo: 'Soldagem industrial e residencial com acabamento de alto padrão.'
         },
         {
-            url: '/images/mezanino-metalico.jpg',
+            url: '/assets/images/mezanino-metalico.jpg',
             titulo: 'Estruturas Metálicas',
             subtitulo: 'Mezaninos e galpões projetados para máxima resistência.'
         },
         {
-            url: '/images/pergolado.jpg',
+            url: '/assets/images/pergolado.jpg',
             titulo: 'Design em Ferro',
             subtitulo: 'Pergolados e grades que unem segurança e estética moderna.'
         }
@@ -48,28 +48,28 @@ export default function Home() {
             nome: 'Portões de Alta Performance',
             desc: 'Fabricação de portões basculantes e deslizantes com motores de alta velocidade.',
             icon: 'bi-door-open',
-            img: '/images/portao-eletronico.jpg'
+            img: '/assets/images/portao-eletronico.jpg'
         },
         {
             id: 'estruturas',
             nome: 'Mezaninos e Estruturas',
             desc: 'Soldagem industrial para ampliação de espaços comerciais e residenciais.',
             icon: 'bi-layers',
-            img: '/images/mezanino-metalico.jpg'
+            img: '/assets/images/mezanino-metalico.jpg'
         },
         {
             id: 'pergolados',
             nome: 'Pergolados',
             desc: 'Design moderno com resistência contra intempéries para áreas externas.',
             icon: 'bi-grid-3x3',
-            img: '/images/pergolado.jpg'
+            img: '/assets/images/pergolado.jpg'
         },
         {
             id: 'grades',
             nome: 'Grades de proteções',
             desc: 'Segurança reforçada com designs personalizados em ferro ou aço carbono.',
             icon: 'bi-shield-check',
-            img: '/images/grades.jpg'
+            img: '/assets/images/grades.jpg'
         }
     ];
 
