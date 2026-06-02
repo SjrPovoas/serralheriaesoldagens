@@ -138,13 +138,12 @@ export default function Home() {
                 <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
                 <meta name="ahrefs-site-verification" content="b3bf5b6aa98bea70da2fde3847d7843db33283b82f85e4656c9564b9d393680a" />
-
+                {/* Ícones */}
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
                 <link rel="apple-touch-icon" type="/x-icon" href="/favicon.ico" />
                 <link rel="shortcut icon" type="/x-icon" href="/favicon.ico" />
                 <link rel="mask-icon" href="/favicon.ico" />
-
                 {/* Meta Tags para WhatsApp / Facebook (Open Graph) */}
                 <meta property="og:locale" content="pt_BR" />
                 <meta property="og:type" content="website" />
@@ -155,15 +154,62 @@ export default function Home() {
                 <meta name="og:image:height" content="630" />
                 <meta property="og:title" content="Serralheria e Soldagens" />
                 <meta property="og:description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
-
-                <title>Serralheria e Soldagens | A melhor serralheria em Cidade Ocidental</title>
-
                 {/* Fontes e Estilos Externos */}
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
                 <link rel="canonical" href="https://serralheriaesoldagens.com.br" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
 
+                <title>Serralheria e Soldagens | A melhor serralheria em Cidade Ocidental</title>
+
+                {/* JSON-LD Corrigido e Otimizado para Pesquisa Aprimorada */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "LocalBusiness",
+                            "@id": "https://www.serralheriaesoldagens.com.br/#localbusiness",
+                            "name": "Serralheria e Soldagens",
+                            "image": [
+                                "https://www.serralheriaesoldagens.com.br/logo3-serralheriaesoldagens.png",
+                                "https://www.serralheriaesoldagens.com.br/images/portao-eletronico.jpg",
+                                "https://www.serralheriaesoldagens.com.br/images/mezanino-metalico.jpg"
+                            ],
+                            "url": "https://www.serralheriaesoldagens.com.br",
+                            "telephone": "+5561993294211",
+                            "priceRange": "$$",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Área Especial",
+                                "addressLocality": "Cidade Ocidental",
+                                "addressRegion": "GO",
+                                "postalCode": "72880-000",
+                                "addressCountry": "BR"
+                            },
+                            "geo": {
+                                "@type": "GeoCoordinates",
+                                "latitude": -16.0827,
+                                "longitude": -47.9286
+                            },
+                            "openingHoursSpecification": [
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                                    "opens": "08:00",
+                                    "closes": "18:00"
+                                },
+                                {
+                                    "@type": "OpeningHoursSpecification",
+                                    "dayOfWeek": ["Saturday"],
+                                    "opens": "08:00",
+                                    "closes": "12:00"
+                                }
+                            ],
+                            "sameAs": [
+                                "https://g.page/r/CZuVl7LtsNYkEAE/review"
+                            ]
+                        })
+                    }}
+                />
             </Head>
 
             {/* --- HEADER --- */}

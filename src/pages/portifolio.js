@@ -88,19 +88,17 @@ export default function Portifolio() {
                 <meta name="description" content="Confira nossos projetos realizados em Cidade Ocidental e DF. Fotos de portões, estruturas metálicas, mezaninos e esquadrias de alto padrão fabricadas pela Serralheria e Soldagens." />
                 <meta name="Keywords" content="projetos de serralheria, serralheiro, fotos de portões, serviços realizados, serralheria em Cidade Ocidental, serralheiro Cidade Ocidental, melhor serralheria em cidade ocidental, soldas em Cidade Ocidental" />
                 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
-
                 {/* VERIFICAÇÕES E ROBOTS */}
                 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
                 <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
                 <meta name="ahrefs-site-verification" content="b3bf5b6aa98bea70da2fde3847d7843db33283b82f85e4656c9564b9d393680a" />
-
+                {/* ìcones */}
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
                 <link rel="apple-touch-icon" type="/x-icon" href="/favicon.ico" />
                 <link rel="shortcut icon" type="/x-icon" href="/favicon.ico" />
                 <link rel="mask-icon" href="/favicon.ico" />
-
                 {/* Meta Tags para WhatsApp / Facebook (Open Graph) */}
                 <meta property="og:locale" content="pt_BR" />
                 <meta property="og:type" content="website" />
@@ -111,12 +109,11 @@ export default function Portifolio() {
                 <meta name="og:image:height" content="630" />
                 <meta property="og:title" content="Serralheria e Soldagens" />
                 <meta property="og:description" content="Melhor serralheria de Cidade Ocidental. Somos especialistas em estruturas metálicas, incluindo a fabricação e instalação de portões basculantes e deslizantes, pergolados, mezaninos, esquadrias modernas, portas e janelas sob medida." />
-
-                <title>Nosso Portfólio de Projetos | Serralheria e Soldagens</title>
-
                 {/* FONTES E ESTILOS EXTERNOS */}
                 <link rel="canonical" href="https://serralheriaesoldagens.com.br/portifolio" />
                 <link rel="profile" href="https://gmpg.org/xfn/11" />
+
+                <title>Nosso Portfólio de Projetos | Serralheria e Soldagens</title>
 
             </Head>
 
