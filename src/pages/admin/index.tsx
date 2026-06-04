@@ -131,7 +131,7 @@ export default function UploadPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
       <Head>
-        <title>Logado no Painel de Upload</title>
+        <title>Logado na Área Administrativa</title>
       </Head>
 
       {/* HEADER */}
@@ -140,16 +140,23 @@ export default function UploadPage() {
           <Link href="/" className="relative flex items-center gap-4">
             <div className="relative w-10 h-10"><Image src="/logo2-serralheriaesoldagens.png" alt="Logo" fill className="object-contain" /></div>
           </Link>
-          <div className="text-blue-500 font-bold text-sm">Painel Administrativo</div>
+          <div className="text-blue-500 font-bold text-sm">ÁREA ADMINISTRATIVA</div>
           <button onClick={handleLogout} className="bg-red-900 px-4 py-2 rounded text-xs uppercase">Deslogar</button>
         </div>
       </header>
 
       <main className="pt-32 p-8 max-w-2xl mx-auto w-full">
 
-        {/* SEÇÃO VISUALIZAR */}
+        {/* SEÇÃO PAINEL ADMINISTRATIVO */}
         <section className="mb-10 p-6 bg-gray-900 rounded border border-gray-800">
-          <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Visualizar Documentos</h2>
+          <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Painel Administrativo</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link href="/assets/docs/contrato-de-servico.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
+              <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
+              Contrato de Serviço de Criação do Site em pdf
+              <i className="bi bi-arrow-right-short seta-icon text-[1rem]"></i>
+            </Link>
+          </div><br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link href="/assets/docs/cartao-visitas.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
               <i className="bi bi-person-vcard-fill text-[1.4rem] text-blue-primary">.</i>
@@ -174,7 +181,7 @@ export default function UploadPage() {
           </div>
         </section>
 
-        {/* SEÇÃO FORMULÁRIO DE UPLOAD */}
+        {/* SEÇÃO PAINEL DE UPLOAD - FORMULÁRIO */}
         <form onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-8 rounded border border-gray-800">
           <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Painel de Upload</h2>
           <h3 className="font-bold text-center mb-4">Adicionar Nova Imagem <i className="bi bi-image-fill text-[1.4rem] text-white-800"></i></h3>

@@ -160,7 +160,7 @@ export default function Home() {
 
                 <title>Serralheria e Soldagens | A melhor serralheria em Cidade Ocidental</title>
 
-                {/* JSON-LD Corrigido e Otimizado para Pesquisa Aprimorada */}
+                {/* JSON-LD Otimizado para Pesquisa Aprimorada */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
