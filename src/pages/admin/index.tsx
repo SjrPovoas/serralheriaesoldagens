@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { CldUploadWidget } from 'next-cloudinary';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
+import ResumoCobrancas from '../../components/ResumoCobrancas';
 
 export default function UploadPage() {
   // --- ESTADOS ---
@@ -146,17 +147,15 @@ export default function UploadPage() {
       </header>
 
       <main className="pt-32 p-8 max-w-2xl mx-auto w-full">
+        {/* SEÇÃO PAINEL RESUMO DE COBRANÇAS */}
+        <section className="mb-10 p-6 bg-gray-900 rounded border border-gray-800">
+        <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Painel de Cobranças e Pagamentos</h2>
+          <ResumoCobrancas />
+        </section>
 
         {/* SEÇÃO PAINEL ADMINISTRATIVO */}
         <section className="mb-10 p-6 bg-gray-900 rounded border border-gray-800">
           <h2 className="text-lg font-bold text-blue-500 mb-4 uppercase tracking-widest text-center">Painel Administrativo</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link href="/assets/docs/contrato-de-servico.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
-              <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
-              Contrato de Serviço de Criação do Site em pdf
-              <i className="bi bi-arrow-right-short seta-icon text-[1rem]"></i>
-            </Link>
-          </div><br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link href="/assets/docs/cartao-visitas.pdf" target="_blank" className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
               <i className="bi bi-person-vcard-fill text-[1.4rem] text-blue-primary">.</i>
@@ -174,7 +173,7 @@ export default function UploadPage() {
               <i className="bi bi-arrow-right-short seta-icon text-[1rem]"></i>
             </Link>
             <Link href="https://www.canva.com/design/DAHJmcml0Qk/U38o8aou9zAnytxlzeVn_Q/edit" target='_blank' className="p-4 bg-black border border-gray-700 rounded hover:border-blue-500 transition text-center font-bold">
-            <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
+              <i className="bi bi-file-earmark-pdf-fill text-[1.4rem] text-blue-primary"></i>
               Link do Projeto no canva
               <i className="bi bi-arrow-up-right text-[1rem]"></i>
             </Link>
@@ -231,13 +230,13 @@ export default function UploadPage() {
         </form>
       </main>
 
-              {/* FOOTER */}
-              <footer className="py-12 bg-black text-silver-text border-t border-zinc-800">
-          <div className="container mx-auto px-6 text-center text-[10px] uppercase tracking-widest opacity-90">
-            <p>© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
-            <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary font-bold mt-2 block">Desenvolvido por SjrPovoaS</a>
-          </div>
-        </footer>
+      {/* FOOTER */}
+      <footer className="py-12 bg-black text-silver-text border-t border-zinc-800">
+        <div className="container mx-auto px-6 text-center text-[10px] uppercase tracking-widest opacity-90">
+          <p>© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
+          <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary font-bold mt-2 block">Desenvolvido por SjrPovoaS</a>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -148,6 +148,12 @@ npm install @types/nodemailer --save-dev
 ```
 npm install next-cloudinary
 ```
+```
+npm install eslint-config-next@latest --save-dev
+```
+```
+npm install --save-dev @typescript-eslint/parser @next/eslint-plugin-next
+```
 
 ---
 ## 2. TECNOLOGIAS USADAS
