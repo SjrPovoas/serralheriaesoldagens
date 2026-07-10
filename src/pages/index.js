@@ -286,24 +286,47 @@ export default function Home() {
                 <button onClick={nextSlide} className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-blue-500 z-10"><i className="bi bi-chevron-double-right text-4xl"></i></button>
             </section>
 
-            {/* QUEM SOMOS */}
-            <section id="sobre" className="py-24 bg-clean-white">
+            {/* NOSSA HISTÓRIA E NOVA LOCALIZAÇÃO */}
+            <section id="sobre" className="py-24 bg-white">
                 <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+
+                    {/* Metade Esquerda: Textos Clean */}
                     <div className="flex-1">
-                        <h2 className="text-metal-text text-4xl font-bold mb-6 italic uppercase tracking-tighter">Nossa História</h2>
+                        <h2 className="text-gray-900 text-4xl font-bold mb-6 italic uppercase tracking-tighter">
+                            Nossa História
+                        </h2>
                         <p className="text-zinc-700 leading-relaxed text-lg mb-4">
-                            Atuamos com **soldagens de alta precisão**, trazendo soluções duráveis para estruturas metálicas em toda a região de <b>Cidade Ocidental - GO</b> e entorno do DF.
+                            Atuamos com <strong>soldagens de alta precisão</strong>, trazendo soluções duráveis para estruturas metálicas em toda a região de <b>Cidade Ocidental - GO</b> e entorno do DF.
                         </p>
-                        <p className="text-zinc-600 leading-relaxed">
+                        <p className="text-zinc-700 leading-relaxed text-lg mb-4">
                             Nosso foco é unir a estética moderna com a resistência do aço, garantindo que cada projeto seja único e extremamente seguro.
                         </p>
-                    </div>
-                    <div className="flex-1 bg-industrial-gray p-10 rounded-2xl border-2 border-blue-primary shadow-2xl md:rotate-2">
-                        <p className="text-white italic font-bold text-center text-xl">
-                            "Qualidade em cada solda, segurança em cada estrutura."</p>
-                        <p className="text-white italic font-bold text-center text-xl">Silvano Ribeiro
+                        <p className="text-zinc-700 leading-relaxed text-lg font-medium">
+                            Com nossa paixão por entregar excelência em soldagem e estruturas seguras, demos um novo passo em nossa trajetória. E para melhor atendê-lo, <strong>nossa loja agora está localizada na Quadra 16, lote 27 do Friburgo B</strong>, um espaço projetado para melhor receber nossos clientes e parceiros.
                         </p>
                     </div>
+
+                    {/* Metade Direita: Imagem da Loja com Caixa de Citação Responsiva */}
+                    <div className="flex-1 relative w-full min-h-[320px] md:h-[450px] py-12 md:py-0 flex items-center justify-center rounded-2xl overflow-hidden shadow-xl mt-6 md:mt-0">
+
+                        {/* Imagem de Fundo da Loja (Fiel e Clara) */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center"
+                            style={{ backgroundImage: "url('/assets/images/loja.png')" }}
+                        ></div>
+
+                        {/* Caixa de Texto Preta (Sobre a Imagem) */}
+                        <div className="relative z-6 bg-black p-1 md:p-3 rounded-2xl border-2 border-blue-500 shadow-2xl md:rotate-2 w-[90%] md:w-4/5 mx-auto">
+                            <p className="text-white italic font-bold text-center text-lg md:text-xl mb-2">
+                                "Qualidade em cada solda, segurança em cada estrutura."
+                            </p>
+                            <p className="text-gray-300 italic font-semibold text-center text-base md:text-lg">
+                                Silvano Ribeiro
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
             </section>
 
@@ -567,7 +590,7 @@ export default function Home() {
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
                                     <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
-                                        <span className="font-bold uppercase tracking-tighter">R. Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Recreio Mossoró. Cidade Ocidental-GO</span>
+                                        <span className="font-bold uppercase tracking-tighter">Quadra 16 Lote 27 Loja 01. Friburgo B. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
                                     <a href="https://www.instagram.com/serralheriaesoldagens" target="_blank" title="Instagram" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
