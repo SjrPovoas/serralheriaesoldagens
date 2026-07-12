@@ -267,8 +267,8 @@ export default function Portifolio() {
                                         <span className="font-bold uppercase tracking-tighter">(61) 9 9329-4211</span>
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
-                                    <a href="https://www.google.com/maps/@-16.0950528,-47.9501867,87m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
-                                        <span className="font-bold uppercase tracking-tighter">R. Oswaldo Cruz, Residencial Flores do Cerrado II, Casa 44 - Recreio Mossoró. Cidade Ocidental-GO</span>
+                                    <a href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979178,-47.9423003,3a,75y,90t/data=!3m7!1e2!3m5!1sCIABIhBJ0PZHu5puwPnNuOVjvHmt!2e10!3e12!7i1529!8i688!4m9!3m8!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979716!4d-47.9422926!10e5!14m1!1BCgIgARICEAE!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
+                                        <span className="font-bold uppercase tracking-tighter">Quadra 16 Lote 27 Loja 01. Friburgo B. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
                                     <a href="https://www.instagram.com/serralheriaesoldagens" target="_blank" title="Instagram" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
