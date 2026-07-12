@@ -36,7 +36,7 @@ export default function Portifolio() {
         fetch('/portfolio-data.json')
             .then(res => res.json())
             .then(data => {
-                // Acessa o array 'projetos' conforme estruturado no JSON
+                // Acessa o array 'servicos' conforme estruturado no JSON
                 setFotosPortifolio(data.servicos || []);
             })
             .catch(err => console.error("Erro ao carregar JSON:", err));
@@ -93,7 +93,7 @@ export default function Portifolio() {
                 <meta name="googlebot" content="all" />
                 <meta name="google-site-verification" content="QEJB4-_lTioDmLOiM6cCKYrnc9AGBFMMOUfRFAnUsbs" />
                 <meta name="ahrefs-site-verification" content="b3bf5b6aa98bea70da2fde3847d7843db33283b82f85e4656c9564b9d393680a" />
-                {/* ìcones */}
+                {/* Ícones */}
                 <link rel="icon" sizes="32x32" href="/favicon.ico" />
                 <link rel="icon" sizes="192x192" href="/favicon.ico" />
                 <link rel="apple-touch-icon" type="/x-icon" href="/favicon.ico" />
@@ -117,7 +117,7 @@ export default function Portifolio() {
 
             </Head>
 
-            {/* --- HEADER (IGUAL À PÁGINA PRINCIPAL) --- */}
+            {/* --- HEADER --- */}
             <header className={`fixed top-0 w-full z-[1000] transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 border-b border-blue-500/30' : 'bg-transparent py-6'}`}>
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <Link href="/" className="relative flex items-center gap-4 group">
@@ -191,18 +191,30 @@ export default function Portifolio() {
                         ))}
                     </div>
 
-                    {/* Grid de Fotos Corrigido */}
+                    {/* Grid de Fotos com Proteção de Marca D'água e Bloqueio de Clique Direito */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {fotosFiltradas.length > 0 ? (
                             fotosFiltradas.map((foto, index) => (
-                                <div key={index} className="relative aspect-square overflow-hidden rounded-xl group">
+                                <div 
+                                    key={index} 
+                                    className="relative aspect-square overflow-hidden rounded-xl border border-zinc-900 shadow-lg group"
+                                    onContextMenu={(e) => e.preventDefault()} // BLOQUEIO DO CLIQUE DIREITO NA DIV
+                                >
                                     <Image
-                                        src={foto.image} // Nome correto do campo no JSON
-                                        alt={foto.title} // Nome correto do campo no JSON
+                                        src={foto.image} 
+                                        alt={foto.title} 
                                         fill
                                         sizes="(max-width: 768px) 100vw, 33vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        onContextMenu={(e) => e.preventDefault()} // BLOQUEIO DO CLIQUE DIREITO NA IMAGEM
                                     />
+                                    
+                                    {/* Camada Protetora: Marca D'água em Diagonal */}
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 select-none">
+                                        <span className="text-white/20 font-bold text-xl md:text-2xl uppercase tracking-widest -rotate-45 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] whitespace-nowrap">
+                                            Serralheria e Soldagens
+                                        </span>
+                                    </div>
                                 </div>
                             ))
                         ) : (
@@ -215,10 +227,8 @@ export default function Portifolio() {
             {/* FOOTER */}
             <footer className="py-12 bg-black border-t-2 border-blue-primary text-silver-text">
                 <div className="container mx-auto px-6">
-                    {/* Grid principal: 2 colunas no mobile, 3 no desktop */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-10 items-start">
-                        {/* COLUNA 1 / LINHA 1 (Mobile): LOGO E DESCRIÇÃO */}
-                        {/* col-span-2 faz com que esta div ocupe a largura total no mobile */}
+                        {/* COLUNA 1: LOGO E DESCRIÇÃO */}
                         <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
                             <Link href="/" className="relative w-32 h-30 mb-4 block">
                                 <Image src="/logo-serralheriaesoldagens.png" alt="Logo Serralheria e Soldagens"
@@ -228,7 +238,7 @@ export default function Portifolio() {
                                 Fabricação e Instalação de portões basculantes, pivoltantes e deslizantes, escadas, estruturas metálicas, mezaninos e pergolados em Cidade Ocidental - GO e entorno.
                             </p>
                         </div>
-                        {/* COLUNA 1 / LINHA 2 (Mobile): MAPA DO SITE */}
+                        {/* COLUNA 2: MAPA DO SITE */}
                         <div className="col-span-1 flex flex-col items-center md:items-center">
                             <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-5 border-b border-blue-primary pb-2">
                                 Mapa do Site
@@ -243,13 +253,12 @@ export default function Portifolio() {
                                 ))}
                             </div>
                         </div>
-                        {/* COLUNA 2 / LINHA 2 (Mobile): FALE CONOSCO */}
+                        {/* COLUNA 3: FALE CONOSCO */}
                         <div className="col-span-1 flex flex-col items-center md:items-end">
                             <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-5 border-b border-blue-primary pb-2">
                                 Fale Conosco
                             </h3>
                             <div className="flex flex-col gap-4 w-full">
-                                {/* Horário */}
                                 <div className="flex flex-col items-center md:items-end gap-1">
                                     <div className="flex items-center gap-2 text-blue-primary mb-1" title="Atendimento">
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-blue-glow transition-all">Atendimento</span>
@@ -261,13 +270,12 @@ export default function Portifolio() {
                                         <p className="m-0 italic">Sáb - Dom - Feriado | Fechado</p>
                                     </div>
                                 </div>
-                                {/* Links de Contato */}
                                 <div className="flex flex-col gap-3 items-center md:items-end">
                                     <a href="tel:061993294211" title="Telefone" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all">
                                         <span className="font-bold uppercase tracking-tighter">(61) 9 9329-4211</span>
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
-                                    <a href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979178,-47.9423003,3a,75y,90t/data=!3m7!1e2!3m5!1sCIABIhBJ0PZHu5puwPnNuOVjvHmt!2e10!3e12!7i1529!8i688!4m9!3m8!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979716!4d-47.9422926!10e5!14m1!1BCgIgARICEAE!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
+                                    <a href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979735,-47.9422233,3a,75y,274.96h,82.02t/data=!3m7!1e1!3m5!1szfoUeUaMjejzEUmJJXkkaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.980000000000004%26panoid%3DzfoUeUaMjejzEUmJJXkkaQ%26yaw%3D274.96!7i16384!8i8192!4m13!1m2!2m1!1sSerralheria+e+Soldagens!3m9!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979917!4d-47.9422989!10e5!14m1!1BCgIgARICEAE!15sChdTZXJyYWxoZXJpYSBlIFNvbGRhZ2Vuc1oZIhdzZXJyYWxoZXJpYSBlIHNvbGRhZ2Vuc5IBBndlbGRlcuABAA!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
                                         <span className="font-bold uppercase tracking-tighter">Quadra 16 Lote 27 Loja 01. Friburgo B. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
@@ -283,17 +291,13 @@ export default function Portifolio() {
                             </div>
                         </div>
                     </div>
-                    {/* LINHA 3 e 4 (Mobile): CRÉDITOS */}
                     <div className="mt-12 pt-6 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-90">
-                        {/* Terceira linha no celular */}
                         <p className="text-center">© 2026 Serralheria e Soldagens - Todos os direitos reservados.</p>
-                        {/* Quarta linha no celular */}
                         <p className="text-center">
                             <a href="https://github.com/SjrPovoas/" target="_blank" className="text-blue-primary hover:text-blue-glow no-underline font-bold">
                                 Desenvolvido por SjrPovoaS
-                            </a></p>
-                        <p className="text-center"></p>
-                        <p className="text-center"></p>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </footer>
@@ -362,7 +366,6 @@ export default function Portifolio() {
                             </form>
                         </div>
                     </div>
-
                 )}
 
                 <style jsx global>{`
@@ -371,7 +374,7 @@ export default function Portifolio() {
                     50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(37, 211, 102, 0.6); }
                 }
                 .animate-pulse-subtle { animation: pulse-subtle 3s infinite ease-in-out; }
-                  `}</style>
+                `}</style>
             </div>
         </div>
     );

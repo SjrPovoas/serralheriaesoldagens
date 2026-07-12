@@ -20,7 +20,7 @@ export default function Home() {
     // --- DEFINIÇÕES DE DADOS ---
     const slides = [
         {
-            url: '/assets/images/portao-eletronico.jpg',
+            url: '/assets/images/portoes/2026.07.12-1639-portao-na-asa-sul-depois1.jpg',
             titulo: 'Serralheria de Precisão',
             subtitulo: 'Soldagem industrial e residencial com acabamento de alto padrão.'
         },
@@ -48,7 +48,7 @@ export default function Home() {
             nome: 'Portões de Alta Performance',
             desc: 'Fabricação de portões basculantes e deslizantes com motores de alta velocidade.',
             icon: 'bi-door-open',
-            img: '/assets/images/portao-eletronico.jpg'
+            img: '/assets/images/portoes/2026.07.12-1639-portao-na-asa-sul-depois1.jpg'
         },
         {
             id: 'estruturas',
@@ -69,7 +69,7 @@ export default function Home() {
             nome: 'Grades de proteções',
             desc: 'Segurança reforçada com designs personalizados em ferro ou aço carbono.',
             icon: 'bi-shield-check',
-            img: '/assets/images/grades.jpg'
+            img: '/assets/images/grades/2026.07.12-1641-grade-na-laje-na-asa-sul.jpg'
         }
     ];
 
@@ -589,7 +589,7 @@ export default function Home() {
                                         <span className="font-bold uppercase tracking-tighter">(61) 9 9329-4211</span>
                                         <i className="bi bi-telephone text-blue-primary text-base"></i>
                                     </a>
-                                    <a href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979716,-47.9422926,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhBJ0PZHu5puwPnNuOVjvHmt!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWmJThbdG3xub8NaAPIUSw86B5uW52YIpgW0iOoZJgObuwA7zJofj9OSMiJsep6RNkrLswcC2WbYzlEv85mdVPGhEwpKsJGlPOk5p17BlXYKJpB7nhHWtI7G6UiwumjtgY9c7hUVMadQqpco%3Dw222-h100-k-no!7i1529!8i688!4m6!3m5!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979716!4d-47.9422926!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
+                                    <a href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979735,-47.9422233,3a,75y,274.96h,82.02t/data=!3m7!1e1!3m5!1szfoUeUaMjejzEUmJJXkkaQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D7.980000000000004%26panoid%3DzfoUeUaMjejzEUmJJXkkaQ%26yaw%3D274.96!7i16384!8i8192!4m13!1m2!2m1!1sSerralheria+e+Soldagens!3m9!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979917!4d-47.9422989!10e5!14m1!1BCgIgARICEAE!15sChdTZXJyYWxoZXJpYSBlIFNvbGRhZ2Vuc1oZIhdzZXJyYWxoZXJpYSBlIHNvbGRhZ2Vuc5IBBndlbGRlcuABAA!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="GoogleMap" className="flex items-center gap-2 text-xs no-underline hover:text-blue-glow transition-all text-center md:text-right">
                                         <span className="font-bold uppercase tracking-tighter">Quadra 16 Lote 27 Loja 01. Friburgo B. Cidade Ocidental-GO</span>
                                         <i className="bi bi-geo-alt text-blue-primary text-base"></i>
                                     </a>
