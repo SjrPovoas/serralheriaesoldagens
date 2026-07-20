@@ -10,7 +10,7 @@ export default function ResumoCobranças() {
     // --- ARRAY COM TODAS AS PARCELAS ---
     const parcelas = [
         { id: 1, numero: "01 de 10", dataVenc: "10/06/2026", status: "Pago", dataPagto: "05/06/2026", valor: "150,00" },
-        { id: 2, numero: "02 de 10", dataVenc: "10/07/2026", status: "Aberto", valor: "150,00" },
+        { id: 2, numero: "02 de 10", dataVenc: "10/07/2026", status: "Pago", dataPagto: "20/07/2026", valor: "150,00" },
         { id: 3, numero: "03 de 10", dataVenc: "10/08/2026", status: "Aberto", valor: "150,00" },
         { id: 4, numero: "04 de 10", dataVenc: "10/09/2026", status: "Aberto", valor: "150,00" },
         { id: 5, numero: "05 de 10", dataVenc: "10/10/2026", status: "Aberto", valor: "150,00" },
