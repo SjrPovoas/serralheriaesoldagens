@@ -430,33 +430,62 @@ export default function Home() {
                         {/* Bloco de Informações */}
                         <div className="bg-metal-dark p-8 rounded-xl border border-zinc-800 shadow-2xl flex flex-col justify-center">
                             <div className="space-y-6">
+                                {/* Comercial */}
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20">
+                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20 shrink-0">
                                         <i className="bi bi-whatsapp text-2xl"></i>
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">Comercial</p>
-                                        <p className="text-white text-xl font-bold"><Link href="tel:061993294211" target="_blank">(61) 9 9329-4211</Link></p>
+                                        <p className="text-white text-xl font-bold">
+                                            <Link href="tel:061993294211" target="_blank">(61) 9 9329-4211</Link>
+                                        </p>
                                     </div>
                                 </div>
 
+                                {/* Localização */}
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20">
+                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20 shrink-0">
                                         <i className="bi bi-geo-alt text-2xl"></i>
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">Localização</p>
-                                        <p className="text-white text-xl font-bold"><Link href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979178,-47.9423003,3a,75y,90t/data=!3m7!1e2!3m5!1sCIABIhBJ0PZHu5puwPnNuOVjvHmt!2e10!3e12!7i1529!8i688!4m9!3m8!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979716!4d-47.9422926!10e5!14m1!1BCgIgARICEAE!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Cidade Ocidental - GO</Link></p>
+                                        <p className="text-white text-xl font-bold">
+                                            <Link href="https://www.google.com/maps/place/Serralheria+e+Soldagens/@-16.0979178,-47.9423003,3a,75y,90t/data=!3m7!1e2!3m5!1sCIABIhBJ0PZHu5puwPnNuOVjvHmt!2e10!3e12!7i1529!8i688!4m9!3m8!1s0x93598540bf20580f:0x24d6b0edb297959b!8m2!3d-16.0979716!4d-47.9422926!10e5!14m1!1BCgIgARICEAE!16s%2Fg%2F11z7hvryjr?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                                Cidade Ocidental - GO
+                                            </Link>
+                                        </p>
                                     </div>
                                 </div>
 
+                                {/* Identificação */}
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20">
+                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20 shrink-0">
                                         <i className="bi bi-briefcase text-2xl"></i>
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">Identificação</p>
-                                        <p className="text-white text-xl font-bold">Serralheria e Soldagens. <Link href="https://empresas.serasaexperian.com.br/consulta-gratis/60555397-SILVANO-RIBEIRO-DE-SOUZA-FILHO-ME-60555397000100" target="_blank">CNPJ: 60.555.397/0001-00</Link></p>
+                                        <p className="text-white text-base md:text-lg font-bold leading-snug">
+                                            Serralheria e Soldagens.
+                                        </p>
+                                        <p className="text-white text-base md:text-lg font-bold">
+                                            CNPJ: <Link href="https://empresas.serasaexperian.com.br/consulta-gratis/60555397-SILVANO-RIBEIRO-DE-SOUZA-FILHO-ME-60555397000100" target="_blank" className="hover:underline">60.555.397/0001-00</Link>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* E-mail */}
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-black border border-blue-primary rounded-full flex items-center justify-center text-blue-glow shadow-blue-glow/20 shrink-0">
+                                        <i className="bi bi-at text-2xl"></i>
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-blue-primary text-xs font-bold uppercase tracking-widest">E-mail para Propostas</p>
+                                        <p className="text-white text-sm sm:text-base lg:text-lg font-bold truncate" title="contato@serralheriaesoldagens.com.br">
+                                            <Link href="mailto:contato@serralheriaesoldagens.com.br">
+                                                contato@serralheriaesoldagens.com.br
+                                            </Link>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

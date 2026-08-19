@@ -1,5 +1,17 @@
 {
     "servicos": [
+      { 
+        "id": "2026-08-15-22.13.58.jpg",
+        "title": "Estruturas/Mezaninos",
+        "categoria": "estruturas", 
+        "image": "/assets/images/estruturas/2026-08-15-22.13.58.jpg"
+      },
+      { 
+        "id": "2026-08-19-17.24.34.jpg",
+        "title": "Estruturas/Mezaninos",
+        "categoria": "estruturas", 
+        "image": "/assets/images/estruturas/2026-08-19-17.24.34.jpg"
+      },
       {
         "id": "2026.07.12-1639",
         "title": "Portão Basculante",
@@ -37,7 +49,7 @@
         "image": "/assets/images/mezanino-metalico.jpg"
       },
       { 
-        "id": 4,
+        "id": "4",
         "title": "Pergolado",
         "categoria": "pergolados", 
         "image": "/assets/images/pergolado.jpg"
