@@ -13,7 +13,7 @@ export default function ResumoCobranças() {
         { id: 2, numero: "02 de 10", dataVenc: "10/07/2026", status: "Pago", dataPagto: "20/07/2026", valor: "150,00" },
         { id: 3, numero: "03 de 10", dataVenc: "10/08/2026", status: "Pago", dataPagto: "15/08/2026", valor: "150,00" },
         { id: 4, numero: "04 de 10", dataVenc: "10/09/2026", status: "Pago", dataPagto: "10/09/2026", valor: "150,00" },
-        { id: 5, numero: "05 de 10", dataVenc: "10/10/2026", status: "Aberto", valor: "150,00" },
+        { id: 5, numero: "05 de 10", dataVenc: "10/10/2026", status: "Pago", dataPagto: "18/10/2026", valor: "150,00" },
         { id: 6, numero: "06 de 10", dataVenc: "10/11/2026", status: "Aberto", valor: "150,00" },
         { id: 7, numero: "07 de 10", dataVenc: "10/12/2026", status: "Aberto", valor: "150,00" },
         { id: 8, numero: "08 de 10", dataVenc: "10/01/2027", status: "Aberto", valor: "150,00" },
